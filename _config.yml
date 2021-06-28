@@ -112,9 +112,9 @@ content:
       # Look at this cool image  
       # ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
-# # Footer
-# footer_show_references: true
-# # references_title: References on request (Override references text)
+ # Footer
+footer_show_references: false
+ # references_title: References on request (Override references text)
 
 # Build settings
 remote_theme: sproogen/resume-theme
