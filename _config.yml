@@ -48,9 +48,7 @@ linkedin_username: manyabar
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Manu and I'm a System Administrator. As well as administrating systems I also have experience cooking foods.
-
-  I am most skilled in: <mark>Binge Watching</mark>
+  Hi, my name's Manu and I'm a System Administrator. As well as administrating systems I also have experience cooking. Most of the time it's a disaster. I am most skilled in: <mark>Binge Watching</mark>
 
 content:
   - title: Projects # Title for the section
