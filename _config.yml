@@ -51,7 +51,7 @@ about_content: | # this will include new lines to allow paragraphs
   Hi, my name's Manu and I'm a System Administrator. As well as administrating systems I also have experience cooking. Most of the time it's a disaster. I am most skilled in: <mark>Binge Watching</mark>
 
 content:
-  - title: Projects # Title for the section
+  - title: Construction work is going on # Title for the section
     layout: list # Type of content section (list/text)
   #   content:
   #     - layout: top-middle
