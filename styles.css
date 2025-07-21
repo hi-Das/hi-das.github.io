@@ -311,6 +311,22 @@ h3 { font-size: 24px; }
     background: var(--color-bg-light);
 }
 
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-accent);
+}
+
+.contact-link:hover .contact-icon {
+    color: var(--color-accent-hover);
+}
+
 .contact-link .arrow {
     font-size: 18px;
     color: var(--color-accent);
