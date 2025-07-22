@@ -42,21 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
         .nav-item.active {
-            background: var(--color-bg-hover);
-            color: var(--color-text);
+            background: var(--color-accent);
+            color: white;
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(35, 131, 226, 0.3);
         }
         
-        .nav-item.active::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 16px;
-            background: var(--color-accent);
-            border-radius: 0 2px 2px 0;
+        .nav-item.active .nav-icon {
+            opacity: 1;
+        }
+        
+        .nav-item.active:hover {
+            background: var(--color-accent-hover);
+            transform: translateX(2px);
         }
         
         .nav-item {
