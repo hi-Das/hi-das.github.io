@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
         .nav-item.active {
-            background: var(--color-accent);
+            background: rgb(80, 161, 246);
             color: white;
             font-weight: 600;
-            box-shadow: 0 2px 8px rgba(35, 131, 226, 0.3);
+            box-shadow: 0 2px 8px rgba(80, 161, 246, 0.25);
         }
         
         .nav-item.active .nav-icon {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .nav-item.active:hover {
-            background: var(--color-accent-hover);
+            background: rgb(70, 150, 235);
             transform: translateX(2px);
         }
         
