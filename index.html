@@ -18,53 +18,59 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Charter:wght@400;700&family=Source+Serif+4:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <div class="nav-left">
-                    <div class="logo">
-                        <h1>Manyabar Das</h1>
-                    </div>
-                    <div class="nav-links">
-                        <a href="#about">About</a>
-                        <a href="#journey">Journey</a>
-                        <a href="#work">Work</a>
-                        <a href="#writing">Writing</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2 class="hero-title">DevOps Engineer</h2>
-                    <p class="hero-subtitle">
-                        Building reliable systems through automation, infrastructure as code, 
-                        and modern engineering practices.
-                    </p>
-                </div>
+    <div class="notion-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Manyabar Das</h1>
+                <p class="sidebar-subtitle">DevOps Engineer</p>
             </div>
-        </section>
+            <nav class="sidebar-nav">
+                <a href="#about" class="nav-item">
+                    <span class="nav-icon">👋</span>
+                    <span>About</span>
+                </a>
+                <a href="#journey" class="nav-item">
+                    <span class="nav-icon">🚀</span>
+                    <span>Journey</span>
+                </a>
+                <a href="#work" class="nav-item">
+                    <span class="nav-icon">💼</span>
+                    <span>Work</span>
+                </a>
+                <a href="#writing" class="nav-item">
+                    <span class="nav-icon">✍️</span>
+                    <span>Writing</span>
+                </a>
+                <a href="#contact" class="nav-item">
+                    <span class="nav-icon">📧</span>
+                    <span>Contact</span>
+                </a>
+            </nav>
+        </aside>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">About</h2>
-                    <div class="prose">
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-content">
+                <!-- Hero Section -->
+                <section class="hero-block">
+                    <h1 class="page-title">Building reliable systems, one pipeline at a time</h1>
+                    <p class="page-description">
+                        I help teams ship software faster and more reliably through automation, 
+                        infrastructure as code, and modern engineering practices.
+                    </p>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="content-block">
+                    <h2 class="block-title">About</h2>
+                    <div class="block-content">
                         <p>
                             I'm a DevOps engineer with a passion for building systems that scale. 
                             I believe in automation, monitoring, and treating infrastructure as code. 
@@ -78,285 +84,130 @@
                             observability, security automation, and platform engineering.
                         </p>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Skills Section -->
-        <section class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">Technologies & Tools</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Cloud & Infrastructure</h3>
-                            <ul>
-                                <li>AWS, Azure, Google Cloud</li>
-                                <li>Terraform, Pulumi</li>
-                                <li>Kubernetes, Docker</li>
-                                <li>Linux, Networking</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Automation & CI/CD</h3>
-                            <ul>
-                                <li>Jenkins, GitHub Actions</li>
-                                <li>GitLab CI, Azure DevOps</li>
-                                <li>Ansible, Chef</li>
-                                <li>Bash, Python, Go</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Monitoring & Security</h3>
-                            <ul>
-                                <li>Prometheus, Grafana</li>
-                                <li>ELK Stack, Datadog</li>
-                                <li>HashiCorp Vault</li>
-                                <li>Security scanning, compliance</li>
-                            </ul>
+                <!-- Skills Section -->
+                <section class="content-block">
+                    <h2 class="block-title">Technologies & Tools</h2>
+                    <div class="block-content">
+                        <div class="skills-list">
+                            <div class="skill-group">
+                                <h3>Cloud & Infrastructure</h3>
+                                <p>AWS, Azure, Google Cloud • Terraform, Pulumi • Kubernetes, Docker • Linux, Networking</p>
+                            </div>
+                            <div class="skill-group">
+                                <h3>Automation & CI/CD</h3>
+                                <p>Jenkins, GitHub Actions • GitLab CI, Azure DevOps • Ansible, Chef • Bash, Python, Go</p>
+                            </div>
+                            <div class="skill-group">
+                                <h3>Monitoring & Security</h3>
+                                <p>Prometheus, Grafana • ELK Stack, Datadog • HashiCorp Vault • Security scanning, compliance</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Career Timeline Section -->
-        <section id="journey" class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">Career Journey</h2>
-                    <div class="timeline">
-                        <article class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2023 - Present</div>
+                <!-- Journey Section -->
+                <section id="journey" class="content-block">
+                    <h2 class="block-title">Career Journey</h2>
+                    <div class="block-content">
+                        <div class="timeline-simple">
+                            <div class="timeline-entry">
                                 <h3>Senior DevOps Engineer</h3>
-                                <p class="timeline-company">Amadeus IT Group</p>
-                                <div class="timeline-description">
-                                    <p>
-                                        Leading infrastructure modernization initiatives and building scalable 
-                                        deployment pipelines for travel technology solutions serving millions 
-                                        of users globally.
-                                    </p>
-                                    <ul class="timeline-highlights">
-                                        <li>Architected multi-cloud infrastructure reducing operational costs by 40%</li>
-                                        <li>Implemented GitOps workflows improving deployment frequency by 300%</li>
-                                        <li>Built comprehensive monitoring stack reducing MTTR from hours to minutes</li>
-                                    </ul>
-                                </div>
+                                <p class="timeline-meta">Amadeus IT Group • 2023 - Present</p>
+                                <p>Leading infrastructure modernization initiatives and building scalable deployment pipelines for travel technology solutions serving millions of users globally.</p>
                             </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2021 - 2023</div>
+                            <div class="timeline-entry">
                                 <h3>DevOps Engineer</h3>
-                                <p class="timeline-company">Tech Startup</p>
-                                <div class="timeline-description">
-                                    <p>
-                                        Built the entire DevOps practice from ground up, establishing CI/CD 
-                                        pipelines, infrastructure automation, and observability systems for 
-                                        a fast-growing fintech company.
-                                    </p>
-                                    <ul class="timeline-highlights">
-                                        <li>Designed and implemented Kubernetes-based microservices architecture</li>
-                                        <li>Established security-first deployment practices with automated scanning</li>
-                                        <li>Created infrastructure-as-code templates used across 15+ environments</li>
-                                    </ul>
-                                </div>
+                                <p class="timeline-meta">Tech Startup • 2021 - 2023</p>
+                                <p>Built the entire DevOps practice from ground up, establishing CI/CD pipelines, infrastructure automation, and observability systems.</p>
                             </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2019 - 2021</div>
+                            <div class="timeline-entry">
                                 <h3>Systems Engineer</h3>
-                                <p class="timeline-company">Enterprise Corporation</p>
-                                <div class="timeline-description">
-                                    <p>
-                                        Managed large-scale infrastructure and began the transition from 
-                                        traditional operations to modern DevOps practices, focusing on 
-                                        automation and reliability.
-                                    </p>
-                                    <ul class="timeline-highlights">
-                                        <li>Migrated legacy systems to cloud infrastructure</li>
-                                        <li>Automated manual processes reducing deployment time by 80%</li>
-                                        <li>Introduced monitoring and alerting improving system uptime to 99.9%</li>
-                                    </ul>
-                                </div>
+                                <p class="timeline-meta">Enterprise Corporation • 2019 - 2021</p>
+                                <p>Managed large-scale infrastructure and began the transition from traditional operations to modern DevOps practices.</p>
                             </div>
-                        </article>
+                        </div>
+                    </div>
+                </section>
 
-                        <article class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2017 - 2019</div>
-                                <h3>Junior Software Developer</h3>
-                                <p class="timeline-company">Software Company</p>
-                                <div class="timeline-description">
-                                    <p>
-                                        Started my journey in tech as a developer, building web applications 
-                                        and gaining deep appreciation for the software development lifecycle 
-                                        and deployment challenges.
-                                    </p>
-                                    <ul class="timeline-highlights">
-                                        <li>Developed full-stack applications using modern frameworks</li>
-                                        <li>Collaborated with operations team sparking interest in DevOps</li>
-                                        <li>Learned Linux, scripting, and basic automation concepts</li>
-                                    </ul>
-                                </div>
+                <!-- Work Section -->
+                <section id="work" class="content-block">
+                    <h2 class="block-title">Selected Work</h2>
+                    <div class="block-content">
+                        <div class="work-list">
+                            <div class="work-entry">
+                                <h3>Multi-Cloud Infrastructure Platform</h3>
+                                <p class="work-tags">Infrastructure as Code • Terraform • Kubernetes</p>
+                                <p>Built a unified infrastructure platform supporting AWS, Azure, and GCP deployments. Reduced deployment time by 70% and improved consistency across environments.</p>
                             </div>
-                        </article>
-
-                        <article class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">2013 - 2017</div>
-                                <h3>Computer Science Degree</h3>
-                                <p class="timeline-company">University Name</p>
-                                <div class="timeline-description">
-                                    <p>
-                                        Built strong foundations in computer science, algorithms, and systems 
-                                        design. Developed passion for automation and efficient systems through 
-                                        various projects and internships.
-                                    </p>
-                                    <ul class="timeline-highlights">
-                                        <li>Focused on distributed systems and network programming</li>
-                                        <li>Built several automation tools for campus IT department</li>
-                                        <li>Completed internships in system administration and software development</li>
-                                    </ul>
-                                </div>
+                            <div class="work-entry">
+                                <h3>Zero-Downtime Deployment Pipeline</h3>
+                                <p class="work-tags">CI/CD • Blue-Green Deployment • Monitoring</p>
+                                <p>Designed and implemented a deployment system with automated rollbacks, comprehensive testing, and real-time monitoring. Achieved 99.9% uptime SLA.</p>
                             </div>
-                        </article>
+                            <div class="work-entry">
+                                <h3>Observability Stack</h3>
+                                <p class="work-tags">Monitoring • Alerting • Performance</p>
+                                <p>Created a complete observability solution with metrics, logs, and traces. Reduced MTTR by 60% and improved system visibility across the organization.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Work Section -->
-        <section id="work" class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">Selected Work</h2>
-                    <div class="work-grid">
-                        <article class="work-item">
-                            <h3>Multi-Cloud Infrastructure Platform</h3>
-                            <p class="work-meta">Infrastructure as Code • Terraform • Kubernetes</p>
-                            <p>
-                                Built a unified infrastructure platform supporting AWS, Azure, and GCP deployments. 
-                                Reduced deployment time by 70% and improved consistency across environments.
-                            </p>
-                        </article>
-                        <article class="work-item">
-                            <h3>Zero-Downtime Deployment Pipeline</h3>
-                            <p class="work-meta">CI/CD • Blue-Green Deployment • Monitoring</p>
-                            <p>
-                                Designed and implemented a deployment system with automated rollbacks, 
-                                comprehensive testing, and real-time monitoring. Achieved 99.9% uptime SLA.
-                            </p>
-                        </article>
-                        <article class="work-item">
-                            <h3>Observability Stack</h3>
-                            <p class="work-meta">Monitoring • Alerting • Performance</p>
-                            <p>
-                                Created a complete observability solution with metrics, logs, and traces. 
-                                Reduced MTTR by 60% and improved system visibility across the organization.
-                            </p>
-                        </article>
+                <!-- Writing Section -->
+                <section id="writing" class="content-block">
+                    <h2 class="block-title">Recent Writing</h2>
+                    <div class="block-content">
+                        <div class="writing-list">
+                            <div class="article-entry">
+                                <h3><a href="#">Building Resilient Infrastructure with Terraform</a></h3>
+                                <p class="article-meta">December 15, 2024 • 8 min read</p>
+                                <p>A deep dive into creating infrastructure that can withstand failures, scale automatically, and recover gracefully.</p>
+                            </div>
+                            <div class="article-entry">
+                                <h3><a href="#">The Evolution of CI/CD: From Jenkins to GitOps</a></h3>
+                                <p class="article-meta">November 28, 2024 • 12 min read</p>
+                                <p>Tracing the journey from traditional CI/CD to modern GitOps practices. Understanding the tradeoffs and choosing the right approach.</p>
+                            </div>
+                            <div class="article-entry">
+                                <h3><a href="#">Kubernetes Security: A Practical Guide</a></h3>
+                                <p class="article-meta">November 10, 2024 • 15 min read</p>
+                                <p>Security considerations for Kubernetes deployments, from RBAC to network policies. Real-world examples and actionable recommendations.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Writing Section -->
-        <section id="writing" class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">Recent Writing</h2>
-                    <div class="articles-grid">
-                        <article class="article-card">
-                            <h3><a href="#">Building Resilient Infrastructure with Terraform</a></h3>
-                            <p class="article-meta">December 15, 2024 • 8 min read</p>
-                            <p>
-                                A deep dive into creating infrastructure that can withstand failures, 
-                                scale automatically, and recover gracefully. Learn practical patterns 
-                                for building production-ready systems.
-                            </p>
-                        </article>
-                        <article class="article-card">
-                            <h3><a href="#">The Evolution of CI/CD: From Jenkins to GitOps</a></h3>
-                            <p class="article-meta">November 28, 2024 • 12 min read</p>
-                            <p>
-                                Tracing the journey from traditional CI/CD to modern GitOps practices. 
-                                Understanding the tradeoffs and choosing the right approach for your team.
-                            </p>
-                        </article>
-                        <article class="article-card">
-                            <h3><a href="#">Kubernetes Security: A Practical Guide</a></h3>
-                            <p class="article-meta">November 10, 2024 • 15 min read</p>
-                            <p>
-                                Security considerations for Kubernetes deployments, from RBAC to 
-                                network policies. Real-world examples and actionable recommendations.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="content-wrapper">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <div class="prose">
-                        <p>
-                            I'm always interested in discussing new opportunities, interesting problems, 
-                            or just chatting about technology. Feel free to reach out.
-                        </p>
-                    </div>
-                    <div class="contact-links">
-                        <a href="mailto:your.email@example.com" class="contact-link">
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
+                <!-- Contact Section -->
+                <section id="contact" class="content-block">
+                    <h2 class="block-title">Get in Touch</h2>
+                    <div class="block-content">
+                        <p>I'm always interested in discussing new opportunities, interesting problems, or just chatting about technology. Feel free to reach out.</p>
+                        <div class="contact-methods">
+                            <a href="mailto:your.email@example.com" class="contact-method">
+                                <span>📧</span>
                                 <span>Email</span>
-                            </div>
-                            <span class="arrow">→</span>
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-method">
+                                <span>💼</span>
                                 <span>LinkedIn</span>
-                            </div>
-                            <span class="arrow">→</span>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
-    </main>
+        </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-content">
             <p>&copy; 2025 Manyabar Das</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script-notion.js"></script>
 </body>
 </html>
