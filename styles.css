@@ -190,31 +190,123 @@ body {
 }
 
 /* Timeline */
-.timeline-simple {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.timeline {
+    position: relative;
+    padding-left: 0;
 }
 
-.timeline-entry h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-text);
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:last-child::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: -8px;
+    width: 2px;
+    height: 32px;
+    background: var(--color-bg);
+}
+
+.timeline-marker {
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    border: 3px solid var(--color-bg);
+    box-shadow: 0 0 0 2px var(--color-border);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 16px;
+    padding-top: 2px;
+}
+
+.timeline-date {
+    font-size: 12px;
+    color: var(--color-text-light);
+    font-weight: 500;
     margin-bottom: 4px;
     font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.timeline-meta {
-    font-size: 14px;
-    color: var(--color-text-secondary);
-    margin-bottom: 8px;
+.timeline-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 2px;
     font-family: var(--font-ui);
 }
 
-.timeline-entry p:not(.timeline-meta) {
+.timeline-company {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+    font-family: var(--font-ui);
+    font-weight: 500;
+}
+
+.timeline-content > p:not(.timeline-company) {
     font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.timeline-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+.timeline-highlights li {
+    font-size: 13px;
+    color: var(--color-text-light);
+    line-height: 1.4;
+    margin-bottom: 4px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.timeline-highlights li::before {
+    content: '•';
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* Work List */
@@ -360,6 +452,29 @@ body {
     
     .contact-methods {
         flex-direction: column;
+    }
+    
+    /* Timeline mobile adjustments */
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-marker {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .timeline-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .timeline-content {
+        padding-left: 12px;
+    }
+    
+    .timeline-item:last-child::after {
+        left: 15px;
     }
 }
 
