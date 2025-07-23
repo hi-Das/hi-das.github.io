@@ -53,6 +53,68 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial highlight
     highlightActiveSection();
 
+    // Mobile Menu Functionality
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const sidebar = document.querySelector('.sidebar');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+    const mobileNavItems = document.querySelectorAll('.nav-item, .contact-item');
+
+    function toggleMobileMenu() {
+        const isOpen = sidebar.classList.contains('mobile-open');
+        
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    function openMobileMenu() {
+        sidebar.classList.add('mobile-open');
+        mobileOverlay.classList.add('active');
+        mobileMenuButton.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeMobileMenu() {
+        sidebar.classList.remove('mobile-open');
+        mobileOverlay.classList.remove('active');
+        mobileMenuButton.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Event listeners for mobile menu
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close mobile menu when clicking navigation items
+    mobileNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    // Close mobile menu on window resize if screen becomes larger
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('mobile-open')) {
+            closeMobileMenu();
+        }
+    });
+
     // Mobile sidebar toggle (for future enhancement)
     // This can be expanded if you want a mobile hamburger menu
     
