@@ -308,7 +308,60 @@ body {
     margin-bottom: 0;
 }
 
-/* Skills List */
+/* Notes List */
+.notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notes-list li {
+    padding: 4px 0 4px 32px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.notes-list li:before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 4px;
+    font-size: 16px;
+}
+
+/* Skills Table */
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.skills-table tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.skills-table tr:last-child {
+    border-bottom: none;
+}
+
+.skills-table td {
+    padding: 10px 12px;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.skills-table td:first-child {
+    width: 140px;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.skills-table td:last-child {
+    color: var(--color-text-secondary);
+}
+
+/* Legacy Skills List (for backward compatibility) */
 .skills-list {
     display: flex;
     flex-direction: column;
