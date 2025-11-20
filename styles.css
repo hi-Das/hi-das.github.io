@@ -473,12 +473,20 @@ body {
 .timeline-company {
     font-size: 14px;
     color: var(--color-text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-family: var(--font-ui);
     font-weight: 500;
 }
 
-.timeline-content > p:not(.timeline-company) {
+.company-info {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.timeline-content > p:not(.timeline-company):not(.company-info) {
     font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.5;
