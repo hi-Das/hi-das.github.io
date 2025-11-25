@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manyabar Das - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 1in;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+            padding: 0;
+            max-width: 8.5in;
+            margin: 1in auto;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .header .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-info a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 8px 15px;
+            font-size: 11px;
+        }
+
+        .skills-grid .skill-category {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skills-grid .skill-items {
+            color: #555;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .job-date {
+            font-size: 10px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .job-company {
+            font-size: 12px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .job-description {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .job-highlights {
+            list-style: none;
+            padding-left: 15px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .job-highlights li {
+            position: relative;
+            margin-bottom: 3px;
+            line-height: 1.5;
+        }
+
+        .job-highlights li:before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            font-weight: bold;
+        }
+
+        /* Certifications */
+        .cert {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .cert-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .cert-details {
+            font-size: 10px;
+            color: #666;
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .print-button:hover {
+            background: #0052a3;
+        }
+
+        /* Quick info */
+        .quick-info {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f8f8;
+            border-left: 3px solid #0066cc;
+        }
+
+        .quick-info ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="header">
+        <h1>Manyabar Das</h1>
+        <div class="title">Site Reliability Engineer</div>
+        <div class="contact-info">
+            <span>📧 hi-das@outlook.com</span>
+            <span>💼 linkedin.com/in/manyabar</span>
+            <span>📍 Bengaluru, India</span>
+            <span>🌐 hi-das.github.io</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Summary</div>
+        <p class="summary">
+            Site Reliability Engineer with 9+ years of experience in cloud infrastructure, automation, and DevOps. 
+            Proven track record of building robust, scalable systems across B2B platforms serving airlines, financial services, 
+            and logistics. Expertise in Azure, Kubernetes, IaC (Terraform/Ansible), and CI/CD pipelines. Successfully saved $60k/year 
+            through Azure subscription optimization and led major infrastructure migrations. Strong advocate for automation and building 
+            systems that scale without constant intervention. Currently seeking founding/core team roles where I can make meaningful 
+            architectural decisions and build something from scratch.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">Cloud</div>
+            <div class="skill-items">Azure (primary), AWS, Oracle Cloud</div>
+            
+            <div class="skill-category">Containers</div>
+            <div class="skill-items">Kubernetes, Docker, Rancher, Harbor</div>
+            
+            <div class="skill-category">Automation</div>
+            <div class="skill-items">Terraform, Ansible, PowerShell</div>
+            
+            <div class="skill-category">CI/CD</div>
+            <div class="skill-items">GitHub Actions, Azure DevOps, TeamCity, Octopus Deploy</div>
+            
+            <div class="skill-category">Systems</div>
+            <div class="skill-items">Linux, Windows Server, VMware vSphere, Hyper-V</div>
+            
+            <div class="skill-category">Web & Load Balancing</div>
+            <div class="skill-items">NGINX, HAProxy, IIS, Cloudflare</div>
+            
+            <div class="skill-category">Identity & Security</div>
+            <div class="skill-items">Azure AD, Active Directory, KeyCloak, PKI, RBAC</div>
+            
+            <div class="skill-category">Monitoring</div>
+            <div class="skill-items">PRTG, LogicMonitor</div>
+            
+            <div class="skill-category">Databases</div>
+            <div class="skill-items">SQL Server, PostgreSQL, Azure SQL, MongoDB</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Site Reliability Engineer (SRE 4)</div>
+                <div class="job-date">Feb 2024 - Present • Hybrid</div>
+            </div>
+            <div class="job-company">Amadeus Labs - Travel tech company powering airline booking systems worldwide</div>
+            <ul class="job-highlights">
+                <li>Managing distributed systems and microservices architecture for airline infrastructure serving millions of users</li>
+                <li>Migrated QA pipelines from Jenkins to GitHub Actions, improving deployment efficiency</li>
+                <li>Implementing monitoring and alerting solutions to proactively identify and resolve system issues</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Infrastructure Engineer</div>
+                <div class="job-date">Jul 2022 - Feb 2024 • Remote</div>
+            </div>
+            <div class="job-company">Jumio Corp - Identity verification platform for automated KYC and compliance</div>
+            <ul class="job-highlights">
+                <li>Cleaned up scattered Azure resource groups and orphaned resources across multiple tenants</li>
+                <li>Merged multiple Azure subscriptions, saving approximately $60k/year in CSP charges</li>
+                <li>Deployed Azure AD Connect Sync to extend on-premises AD identities to cloud resources</li>
+                <li>Implemented LogicMonitor for comprehensive monitoring of on-premises and Azure resources</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">System Administrator → Senior System Administrator</div>
+                <div class="job-date">Sep 2017 - Jul 2022 • Remote</div>
+            </div>
+            <div class="job-company">Optym - Supply chain optimization software for transportation and logistics</div>
+            <ul class="job-highlights">
+                <li>Progressed from Associate to Senior System Administrator over 5 years</li>
+                <li>Managed VMware vSphere virtualization environments and enterprise systems</li>
+                <li>Automated repetitive operational tasks using PowerShell and configuration management tools</li>
+                <li>Mentored junior team members and established infrastructure best practices</li>
+                <li>Led infrastructure operations and capacity planning initiatives</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">IT Support Engineer</div>
+                <div class="job-date">Sep 2016 - Aug 2017 • On-site</div>
+            </div>
+            <div class="job-company">Tech Mahindra - Global IT services and consulting company</div>
+            <ul class="job-highlights">
+                <li>Provided technical support for enterprise applications and infrastructure</li>
+                <li>Resolved hardware and software issues for corporate users</li>
+                <li>Developed strong troubleshooting and customer service skills</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Key Projects & Achievements</div>
+        
+        <div class="job">
+            <div class="job-title">Enterprise Infrastructure Automation & Migration</div>
+            <ul class="job-highlights">
+                <li>Created Terraform templates and Ansible playbooks to automate Windows server deployment on vSphere</li>
+                <li>Led Dallas DC migration, deploying hundreds of virtual machines using infrastructure as code</li>
+                <li>Responsible for capacity planning, resource allocation, and platform negotiations</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Kubernetes Platform Management with SUSE Rancher</div>
+            <ul class="job-highlights">
+                <li>Deployed SUSE Rancher to manage self-hosted Kubernetes clusters</li>
+                <li>Achieved deployment-ready HA cluster setup in 10 minutes</li>
+                <li>Implemented Harbor container registry for local Docker image storage, reducing operational costs</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Cloud Security & DNS Migration to Cloudflare</div>
+            <ul class="job-highlights">
+                <li>Migrated customer-facing routing from AWS Route53 to Cloudflare</li>
+                <li>Implemented DDOS protection and geo-based access restrictions with WAF</li>
+                <li>Set up direct tunnels from Cloudflare to app servers, eliminating public IP requirements</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        
+        <div class="cert">
+            <div class="cert-title">Microsoft Certified: Azure Administrator (AZ-104)</div>
+            <div class="cert-details">Microsoft Azure • Cloud Administration • 2022</div>
+        </div>
+
+        <div class="cert">
+            <div class="cert-title">Microsoft Certified: Identity and Access Administrator (SC-300)</div>
+            <div class="cert-details">Microsoft Azure • Identity Management • 2022</div>
+        </div>
+
+        <div class="cert">
+            <div class="cert-title">Oracle Cloud Infrastructure: Foundations Associate</div>
+            <div class="cert-details">Oracle Cloud • 2021</div>
+        </div>
+
+        <div class="cert">
+            <div class="cert-title">SUSE Certified: Rancher 2.5</div>
+            <div class="cert-details">Kubernetes • Container Orchestration</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Additional Information</div>
+        <div class="quick-info">
+            <ul>
+                <li>🌍 Open to relocation for the right opportunity</li>
+                <li>🇺🇸 US B1 visa holder</li>
+                <li>⏰ Current notice period: 60 days</li>
+                <li>🎯 Interested in founding/core team roles and early-stage startups</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
