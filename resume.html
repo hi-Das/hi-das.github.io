@@ -38,13 +38,12 @@
 
         /* Header */
         .header {
-            margin-bottom: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
         }
 
         .header h1 {
-            font-size: 32px;
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 5px;
             color: #000;
@@ -57,11 +56,11 @@
         }
 
         .contact-info {
-            font-size: 11px;
+            font-size: 12px;
             color: #666;
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
 
         .contact-info a {
@@ -71,18 +70,16 @@
 
         /* Sections */
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 16px;
         }
 
         .section-title {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 700;
-            color: #000;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 8px;
             letter-spacing: 0.5px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         /* Summary */
@@ -95,23 +92,26 @@
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 8px 15px;
+            grid-template-columns: 150px 1fr;
+            gap: 6px 20px;
             font-size: 11px;
+            align-items: start;
         }
 
         .skills-grid .skill-category {
             font-weight: 600;
             color: #333;
+            text-align: left;
         }
 
         .skills-grid .skill-items {
             color: #555;
+            line-height: 1.5;
         }
 
         /* Experience */
         .job {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             page-break-inside: avoid;
         }
 
@@ -119,57 +119,64 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .job-title {
             font-size: 13px;
             font-weight: 700;
             color: #000;
+            line-height: 1.3;
         }
 
         .job-date {
             font-size: 10px;
             color: #666;
             white-space: nowrap;
+            line-height: 1.3;
         }
 
         .job-company {
-            font-size: 12px;
+            font-size: 11px;
             color: #555;
             font-style: italic;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
+            line-height: 1.3;
         }
 
         .job-description {
             font-size: 11px;
             color: #555;
             margin-bottom: 5px;
+            line-height: 1.4;
         }
 
         .job-highlights {
             list-style: none;
-            padding-left: 15px;
+            padding-left: 0;
+            margin-left: 18px;
             font-size: 11px;
             color: #555;
         }
 
         .job-highlights li {
             position: relative;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             line-height: 1.5;
+            padding-left: 0;
         }
 
         .job-highlights li:before {
             content: "•";
             position: absolute;
-            left: -15px;
+            left: -18px;
             font-weight: bold;
+            color: #333;
         }
 
         /* Certifications */
         .cert {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             page-break-inside: avoid;
         }
 
@@ -177,11 +184,14 @@
             font-size: 12px;
             font-weight: 600;
             color: #000;
+            line-height: 1.4;
+            margin-bottom: 2px;
         }
 
         .cert-details {
             font-size: 10px;
             color: #666;
+            line-height: 1.3;
         }
 
         /* Print button */
@@ -206,18 +216,31 @@
         /* Quick info */
         .quick-info {
             font-size: 11px;
-            color: #666;
+            color: #555;
+            margin-top: 12px;
             margin-bottom: 15px;
-            padding: 10px;
-            background: #f8f8f8;
-            border-left: 3px solid #0066cc;
         }
 
         .quick-info ul {
             list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .quick-info li {
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .quick-info li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -225,42 +248,51 @@
     <button class="print-button no-print" onclick="window.print()">Print / Save as PDF</button>
 
     <div class="header">
-        <h1>Manyabar Das</h1>
-        <div class="title">Site Reliability Engineer</div>
+        <h1>Manyabar DAS</h1>
         <div class="contact-info">
-            <span>📧 hi-das@outlook.com</span>
-            <span>💼 linkedin.com/in/manyabar</span>
+            <span>📧 <a href="mailto:hi-das@outlook.com">hi-das@outlook.com</a></span>
+            <span>💼 <a href="https://linkedin.com/in/manyabar" target="_blank">linkedin</a></span>
+            <span>🌐 <a href="https://hi-das.github.io" target="_blank">hi-das.github.io</a></span>
             <span>📍 Bengaluru, India</span>
-            <span>🌐 hi-das.github.io</span>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">Summary</div>
+        <div class="section-title">The Pitch!</div>
         <p class="summary">
-            Site Reliability Engineer with 9+ years of experience in cloud infrastructure, automation, and DevOps. 
-            Proven track record of building robust, scalable systems across B2B platforms serving airlines, financial services, 
-            and logistics. Expertise in Azure, Kubernetes, IaC (Terraform/Ansible), and CI/CD pipelines. Successfully saved $60k/year 
-            through Azure subscription optimization and led major infrastructure migrations. Strong advocate for automation and building 
-            systems that scale without constant intervention. Currently seeking founding/core team roles where I can make meaningful 
-            architectural decisions and build something from scratch.
+            I started as an IT Support Engineer and somehow ended up doing Cloud/DevOps work. Spent the last 9+ years 
+            building and fixing infrastructure for B2B companies—airlines, cyber-sec and logistics. I've learned a few things along the way, 
+            but it's never enough. Looking for a founding or early team role where I can actually build something meaningful from scratch or 
+            I have the freedom to tinker and improve existing systems.
         </p>
+        <div class="quick-info">
+            <ul>
+                <li>9+ years of experience in IT</li>
+                <li>US B1 visa holder</li>
+                <li>Currently living in Bengaluru, India (+5:30)</li>
+                <li>Current notice period: 60 days</li>
+                <li>Highly introverted, way too decent 😊</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
-        <div class="section-title">Technical Skills</div>
+        <div class="section-title">The Tech 🛠️</div>
         <div class="skills-grid">
             <div class="skill-category">Cloud</div>
-            <div class="skill-items">Azure (primary), AWS, Oracle Cloud</div>
+            <div class="skill-items">Microsoft Azure (primary), Some AWS Services</div>
             
             <div class="skill-category">Containers</div>
             <div class="skill-items">Kubernetes, Docker, Rancher, Harbor</div>
+            
+            <div class="skill-category">Version Control</div>
+            <div class="skill-items">GitHub, Bitbucket</div>
             
             <div class="skill-category">Automation</div>
             <div class="skill-items">Terraform, Ansible, PowerShell</div>
             
             <div class="skill-category">CI/CD</div>
-            <div class="skill-items">GitHub Actions, Azure DevOps, TeamCity, Octopus Deploy</div>
+            <div class="skill-items">GitHub Actions, TeamCity, Octopus Deploy</div>
             
             <div class="skill-category">Systems</div>
             <div class="skill-items">Linux, Windows Server, VMware vSphere, Hyper-V</div>
@@ -269,29 +301,33 @@
             <div class="skill-items">NGINX, HAProxy, IIS, Cloudflare</div>
             
             <div class="skill-category">Identity & Security</div>
-            <div class="skill-items">Azure AD, Active Directory, KeyCloak, PKI, RBAC</div>
+            <div class="skill-items">Azure AD, Active Directory, KeyCloak</div>
             
             <div class="skill-category">Monitoring</div>
             <div class="skill-items">PRTG, LogicMonitor</div>
             
             <div class="skill-category">Databases</div>
             <div class="skill-items">SQL Server, PostgreSQL, Azure SQL, MongoDB</div>
+            
+            <div class="skill-category">Collaboration</div>
+            <div class="skill-items">JIRA, Confluence, Microsoft 365</div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">Professional Experience</div>
+        <div class="section-title">The Journey ♾️</div>
 
         <div class="job">
             <div class="job-header">
-                <div class="job-title">Site Reliability Engineer (SRE 4)</div>
+                <div class="job-title">Reliability Engineer</div>
                 <div class="job-date">Feb 2024 - Present • Hybrid</div>
             </div>
             <div class="job-company">Amadeus Labs - Travel tech company powering airline booking systems worldwide</div>
             <ul class="job-highlights">
-                <li>Managing distributed systems and microservices architecture for airline infrastructure serving millions of users</li>
+                <li>Managing distributed systems for airline infrastructure serving millions of users</li>
+                <li>Optimized deployment time by getting rid of redundant steps in the CD pipelines (Octopus Deploy)</li>
                 <li>Migrated QA pipelines from Jenkins to GitHub Actions, improving deployment efficiency</li>
-                <li>Implementing monitoring and alerting solutions to proactively identify and resolve system issues</li>
+                <li>Directly responsible for Clients like Saudia, SouthWest, GOL airline's application infrastructure</li>
             </ul>
         </div>
 
@@ -317,9 +353,10 @@
             <div class="job-company">Optym - Supply chain optimization software for transportation and logistics</div>
             <ul class="job-highlights">
                 <li>Progressed from Associate to Senior System Administrator over 5 years</li>
-                <li>Managed VMware vSphere virtualization environments and enterprise systems</li>
-                <li>Automated repetitive operational tasks using PowerShell and configuration management tools</li>
-                <li>Mentored junior team members and established infrastructure best practices</li>
+                <li>Assisted InfoSec team during ISO and CSA-STAR audits for risk assessments and mitigations</li>
+                <li>Managed VMware and Azure environments running Production, UAT, and Dev workloads</li>
+                <li>Automated repetitive tasks with Ansible and Terraform</li>
+                <li>Assisted with setting up processes and workflows for issue tracking</li>
                 <li>Led infrastructure operations and capacity planning initiatives</li>
             </ul>
         </div>
@@ -331,6 +368,7 @@
             </div>
             <div class="job-company">Tech Mahindra - Global IT services and consulting company</div>
             <ul class="job-highlights">
+                <li>Managed Identity and Access Management, users and groups</li>
                 <li>Provided technical support for enterprise applications and infrastructure</li>
                 <li>Resolved hardware and software issues for corporate users</li>
                 <li>Developed strong troubleshooting and customer service skills</li>
@@ -339,7 +377,7 @@
     </div>
 
     <div class="section">
-        <div class="section-title">Key Projects & Achievements</div>
+        <div class="section-title">The Tales ✨</div>
         
         <div class="job">
             <div class="job-title">Enterprise Infrastructure Automation & Migration</div>
@@ -363,7 +401,7 @@
             <div class="job-title">Cloud Security & DNS Migration to Cloudflare</div>
             <ul class="job-highlights">
                 <li>Migrated customer-facing routing from AWS Route53 to Cloudflare</li>
-                <li>Implemented DDOS protection and geo-based access restrictions with WAF</li>
+                <li>Implemented DDoS protection and geo-based access restrictions with WAF</li>
                 <li>Set up direct tunnels from Cloudflare to app servers, eliminating public IP requirements</li>
             </ul>
         </div>
@@ -390,18 +428,6 @@
         <div class="cert">
             <div class="cert-title">SUSE Certified: Rancher 2.5</div>
             <div class="cert-details">Kubernetes • Container Orchestration</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Additional Information</div>
-        <div class="quick-info">
-            <ul>
-                <li>🌍 Open to relocation for the right opportunity</li>
-                <li>🇺🇸 US B1 visa holder</li>
-                <li>⏰ Current notice period: 60 days</li>
-                <li>🎯 Interested in founding/core team roles and early-stage startups</li>
-            </ul>
         </div>
     </div>
 
