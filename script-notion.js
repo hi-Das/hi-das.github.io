@@ -1,186 +1,219 @@
-// Notion-inspired DevOps Portfolio - JavaScript
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    // Check for saved theme preference or respect system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.textContent = '🌙';
-    } else {
-        themeIcon.textContent = '☀️';
-    }
-    
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            themeIcon.textContent = '☀️';
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '🌙';
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('.nav-item[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - 20;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Highlight active section in sidebar
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-item[href^="#"]');
-    
-    function highlightActiveSection() {
-        const scrollPosition = window.scrollY + 100;
-        
-        sections.forEach((section, index) => {
-            const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                navItems.forEach(item => item.classList.remove('active'));
-                const activeNavItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
-                if (activeNavItem) {
-                    activeNavItem.classList.add('active');
-                }
-            }
-        });
-    }
-
-    // Add active state styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .nav-item {
-            position: relative;
-        }
+function renderSectionHead(label, note) {
+    return `
+        <div class="section-head">
+            <p class="section-label">${escapeHtml(label)}</p>
+            <p class="section-note">${escapeHtml(note)}</p>
+        </div>
     `;
-    document.head.appendChild(style);
+}
 
-    // Listen for scroll events
-    window.addEventListener('scroll', highlightActiveSection);
-    
-    // Initial highlight
-    highlightActiveSection();
+function renderHeader(data) {
+    document.getElementById("header-nav").innerHTML = `
+        <a href="#story">story</a>
+        <a href="#experience">work</a>
+        <a href="#impact">impact</a>
+        <a href="#toolbox">toolbox</a>
+        <a href="resume.html" class="nav-resume">resume</a>
+    `;
+}
 
-    // Mobile Menu Functionality
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const sidebar = document.querySelector('.sidebar');
-    const mobileOverlay = document.querySelector('.mobile-overlay');
-    const mobileNavItems = document.querySelectorAll('.nav-item, .contact-item');
+function renderHero(data) {
+    return `
+        <section class="hero-shell section">
+            <div class="hero-grid">
+                <div class="hero-copy frame">
+                    <h1 class="hero-name">${escapeHtml(data.profile.name)}</h1>
+                    <p class="hero-bio">${escapeHtml(data.profile.bio)}</p>
+                </div>
+                <aside class="hero-panel frame">
+                    <p class="panel-label">Profile</p>
+                    <div class="panel-row">
+                        <span class="panel-key">Based</span>
+                        <strong class="panel-value">${escapeHtml(data.profile.meta[0] || "Bengaluru, India")}</strong>
+                    </div>
+                    <div class="panel-row">
+                        <span class="panel-key">Focus</span>
+                        <strong class="panel-value">${escapeHtml(data.profile.role)}</strong>
+                    </div>
+                    <div class="panel-row">
+                        <span class="panel-key">Email</span>
+                        <a class="panel-value panel-link" href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a>
+                    </div>
+                    <div class="panel-row">
+                        <span class="panel-key">Links</span>
+                        <div class="panel-links">
+                            <a href="${escapeHtml(data.profile.linkedin)}" target="_blank" rel="noreferrer">LinkedIn</a>
+                            <a href="${escapeHtml(data.profile.github)}" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="resume.html">Resume</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="signal-grid">
+                ${data.signals.map((item) => `
+                    <article class="signal-card">
+                        <p class="signal-value">${escapeHtml(item.value)}</p>
+                        <p class="signal-label">${escapeHtml(item.label)}</p>
+                    </article>
+                `).join("")}
+            </div>
+        </section>
+    `;
+}
 
-    function toggleMobileMenu() {
-        const isOpen = sidebar.classList.contains('mobile-open');
-        
-        if (isOpen) {
-            closeMobileMenu();
-        } else {
-            openMobileMenu();
-        }
+function renderStory(data) {
+    return `
+        <section class="section" id="story">
+            ${renderSectionHead("01 Story", "The path from support work to infrastructure ownership to reliability engineering.")}
+            <div class="story-layout">
+                <article class="story-prose frame">
+                    <p class="story-lead">I care about the systems behind delivery, but also about the people who have to live with those systems every day.</p>
+                    ${data.story.intro.map((paragraph) => `<p class="story-paragraph">${escapeHtml(paragraph)}</p>`).join("")}
+                </article>
+                <aside class="story-principles frame">
+                    <p class="panel-label">How I work</p>
+                    <div class="principle-list">
+                        ${data.story.principles.map((principle) => `
+                            <div class="principle-item">
+                                <p class="principle-title">${escapeHtml(principle.title)}</p>
+                                <p class="principle-body">${escapeHtml(principle.body)}</p>
+                            </div>
+                        `).join("")}
+                    </div>
+                </aside>
+            </div>
+            <div class="chapter-grid">
+                ${data.story.chapters.map((chapter) => `
+                    <article class="chapter-card frame">
+                        <p class="chapter-step">${escapeHtml(chapter.step)}</p>
+                        <h3 class="chapter-title">${escapeHtml(chapter.title)}</h3>
+                        <p class="chapter-body">${escapeHtml(chapter.body)}</p>
+                    </article>
+                `).join("")}
+            </div>
+        </section>
+    `;
+}
+
+function renderExperience(data) {
+    return `
+        <section class="section" id="experience">
+            ${renderSectionHead("02 Experience", "Roles across reliability engineering, infrastructure, and operations ownership.")}
+            ${data.experience.map(role => `
+                <article class="job frame">
+                    <div class="job-rail">
+                        <span class="job-period">${escapeHtml(role.period)}</span>
+                        <span class="job-mode">${escapeHtml(role.mode)}</span>
+                    </div>
+                    <div class="job-main">
+                        <div class="job-header">
+                            <div>
+                                <h2 class="job-title">${escapeHtml(role.title)}</h2>
+                                <p class="job-company">${escapeHtml(role.company)}</p>
+                            </div>
+                        </div>
+                        <ul class="job-bullets">
+                            ${role.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("")}
+                        </ul>
+                        <div class="job-stack">
+                            ${role.stack.map(s => `<span class="tag">${escapeHtml(s)}</span>`).join("")}
+                        </div>
+                    </div>
+                </article>
+            `).join("")}
+        </section>
+    `;
+}
+
+function renderImpact(data) {
+    return `
+        <section class="section" id="impact">
+            ${renderSectionHead("03 Selected impact", "Representative infrastructure and delivery work with operational consequences.")}
+            <div class="impact-grid">
+                ${data.impact.map(item => `
+                <div class="impact-item frame">
+                    <p class="impact-context">${escapeHtml(item.context)}</p>
+                    <p class="impact-title">${escapeHtml(item.title)}</p>
+                    <p class="impact-body">${escapeHtml(item.body)}</p>
+                </div>
+                `).join("")}
+            </div>
+        </section>
+    `;
+}
+
+function renderToolbox(data) {
+    return `
+        <section class="section" id="toolbox">
+            ${renderSectionHead("04 Toolbox", "Core systems, platform, and operational technologies used in production." )}
+            <div class="toolbox-grid">
+                ${data.toolbox.map(row => `
+                <div class="toolbox-card frame">
+                    <span class="skill-category">${escapeHtml(row.category)}</span>
+                    <div class="skill-items">
+                        ${row.items.map(item => `<span class="tag">${escapeHtml(item)}</span>`).join("")}
+                    </div>
+                </div>
+                `).join("")}
+            </div>
+        </section>
+    `;
+}
+
+function renderCerts(data) {
+    return `
+        <section class="section" id="credentials">
+            ${renderSectionHead("05 Certifications", "Current credentials relevant to cloud administration and platform operations.")}
+            <div class="cert-grid">
+                ${data.certifications.map(cert => `
+                <div class="cert-row frame">
+                    <span class="cert-name">${escapeHtml(cert.name)}</span>
+                    <span class="cert-year">${escapeHtml(cert.issuer)} · ${escapeHtml(cert.year)}</span>
+                </div>
+                `).join("")}
+            </div>
+        </section>
+    `;
+}
+
+function renderFooter(data) {
+    const footer = document.getElementById("site-footer");
+    if (!footer) return;
+
+    if (!data.footer) {
+        footer.hidden = true;
+        footer.textContent = "";
+        return;
     }
 
-    function openMobileMenu() {
-        sidebar.classList.add('mobile-open');
-        mobileOverlay.classList.add('active');
-        mobileMenuButton.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
+    footer.hidden = false;
+    footer.textContent = data.footer;
+}
 
-    function closeMobileMenu() {
-        sidebar.classList.remove('mobile-open');
-        mobileOverlay.classList.remove('active');
-        mobileMenuButton.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const data = window.siteContent;
+    if (!data) return;
 
-    // Event listeners for mobile menu
-    if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', toggleMobileMenu);
-    }
+    renderHeader(data);
 
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', closeMobileMenu);
-    }
+    document.getElementById("app").innerHTML =
+        renderHero(data) +
+        renderStory(data) +
+        renderExperience(data) +
+        renderImpact(data) +
+        renderToolbox(data) +
+        renderCerts(data);
 
-    // Close mobile menu when clicking navigation items
-    mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                closeMobileMenu();
-            }
-        });
-    });
-
-    // Close mobile menu on window resize if screen becomes larger
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            closeMobileMenu();
-        }
-    });
-
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && sidebar.classList.contains('mobile-open')) {
-            closeMobileMenu();
-        }
-    });
-
-    // Mobile sidebar toggle (for future enhancement)
-    // This can be expanded if you want a mobile hamburger menu
-    
-    // Add subtle animation to content blocks
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe content blocks for animation
-    document.querySelectorAll('.content-block').forEach(block => {
-        block.style.opacity = '0';
-        block.style.transform = 'translateY(10px)';
-        block.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        observer.observe(block);
-    });
+    renderFooter(data);
 });
 
-// Add some nice console branding
-console.log(`
-╔══════════════════════════════════════╗
-║     DevOps Engineer Portfolio        ║
-║     Built with Notion-style design   ║
-║     by Manyabar Das                   ║
-╚══════════════════════════════════════╝
 
-🚀 Infrastructure as Code
-☁️  Multi-Cloud Solutions  
-🔧 CI/CD Automation
-📊 Observability & Monitoring
-
-Interested in DevOps? Let's connect!
-`);
