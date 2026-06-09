@@ -42,12 +42,17 @@
         }
 
         .header {
+            display: grid;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             gap: 18px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--line);
         }
 
         .identity {
@@ -66,6 +71,54 @@
             margin: 5px 0 0;
             color: var(--muted);
             font-size: 0.9rem;
+        }
+
+        .contact-strip {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--surface);
+            padding: 8px 10px;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 6px 14px;
+            white-space: nowrap;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: #3a3a38;
+            white-space: nowrap;
+        }
+
+        .contact-icon {
+            color: #4b4b47;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+
+        .contact-icon svg {
+            width: 14px;
+            height: 14px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .contact-value {
+            user-select: text;
         }
 
         .tabs-wrap {
@@ -158,6 +211,31 @@
             line-height: 1.7;
         }
 
+        .story-lead {
+            margin: 10px 0 0;
+            color: #2a2a29;
+            font-size: 0.98rem;
+            line-height: 1.72;
+        }
+
+        .story-principles {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+            display: grid;
+            gap: 8px;
+        }
+
+        .story-principle {
+            padding: 9px 10px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            color: #2f2f2d;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
         .story-steps {
             list-style: none;
             margin: 12px 0 0;
@@ -178,6 +256,38 @@
             color: var(--muted);
             font-size: 0.88rem;
             line-height: 1.65;
+        }
+
+        .cert-list {
+            list-style: none;
+            margin: 10px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 8px;
+        }
+
+        .cert-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 9px 10px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .cert-name {
+            margin: 0;
+            font-size: 0.88rem;
+            color: #2f2f2d;
+        }
+
+        .cert-meta {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--muted);
+            white-space: nowrap;
         }
 
         .callout {
@@ -335,6 +445,10 @@
 
         @media (max-width: 760px) {
             .header {
+                gap: 10px;
+            }
+
+            .header-top {
                 flex-direction: column;
                 align-items: flex-start;
             }
@@ -345,6 +459,15 @@
 
             .tabs {
                 width: 100%;
+            }
+
+            .contact-strip {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .contact-list {
+                gap: 6px 12px;
             }
 
             .projects {
@@ -375,35 +498,45 @@
         // Edit your site content here. No HTML/CSS edits needed for normal updates.
         const portfolioData = {
             profile: {
-                name: "Manyabar Das",
-                focus: "Reliability / Infrastructure / DevOps"
+                name: "Manyabar DAS",
+                focus: "Infrastructure / DevOps / Reliability",
+                contact: {
+                    email: "hi-das@outlook.com",
+                    linkedin: "https://linkedin.com/in/manyabar",
+                    github: "https://github.com/hi-Das",
+                    location: "Bengaluru, India",
+                    timezones: "GMT+5:30 | GMT+1/+2"
+                }
             },
-            about: {
-                intro:
-                    "Reliability and infrastructure engineer with 10+ years across IT support, systems administration, cloud operations, and SRE. I build and stabilize the systems behind software delivery — CI/CD, Azure infrastructure, hybrid environments, identity, and the operational guardrails that keep teams moving reliably.",
-                story: {
-                    paragraphs: [
-                        "I care about the systems behind delivery, but also about the people who have to live with those systems every day.",
-                        "I did not enter tech through a clean platform-engineering path. I started in IT support, where the work is immediate, messy, and impossible to fake. That background still shapes how I think: systems are only good if people can actually operate them when something goes wrong.",
-                        "Over time I moved from keeping endpoints and users functioning, to owning infrastructure, and then to reliability work closer to delivery pipelines, cloud platforms, and operational guardrails. The through-line has stayed the same: remove friction, reduce avoidable failure, and leave systems easier to understand than I found them."
-                    ],
-                    chapters: [
-                        {
-                            title: "Started where failure is visible",
-                            text: "My first roles were support-heavy. That taught me patience, direct communication, and a practical respect for operations."
-                        },
-                        {
-                            title: "Moved into infrastructure ownership",
-                            text: "At Optym and Jumio, the work became broader: provisioning, hybrid environments, automation, delivery tooling, DNS, identity, and day-2 operations."
-                        },
-                        {
-                            title: "Now I optimize change and reliability",
-                            text: "In reliability engineering, the interesting problems are rarely isolated. They sit between teams, pipelines, infrastructure, and incident handling."
-                        }
-                    ]
-                },
+            story: {
+                lead:
+                    "I am a reliability and infrastructure engineer with 10+ years in IT support, systems administration, cloud operations, and SRE. Most of my hands-on work has been in Azure, and I focus on patterns that translate well across cloud platforms.",
+                paragraphs: [
+                    "I care about systems, but I care just as much about the people who have to run them every day.",
+                    "I did not come into tech through a polished platform path. I started in support, where problems are real, urgent, and very human. That shaped me: a system is only good if someone can understand it and recover it when something breaks.",
+                    "Over time I moved from user support into infrastructure ownership, and then into reliability work around pipelines, cloud platforms, and incident response. The goal has stayed simple: remove friction, reduce avoidable failures, and leave things clearer than I found them."
+                ],
+                principles: [
+                    "Clarity first: if a system is hard to read, it is hard to trust in production.",
+                    "Automate the painful repeats: boring manual work is where mistakes and burnout grow.",
+                    "Guardrails over gatekeeping: teams should move fast without creating tomorrow's incidents."
+                ],
+                chapters: [
+                    {
+                        title: "Started where failure is visible",
+                        text: "My first roles were support-heavy. They taught me patience, direct communication, and respect for the people on the receiving end of outages."
+                    },
+                    {
+                        title: "Moved into infrastructure ownership",
+                        text: "At Optym and Jumio, my scope grew into provisioning, hybrid environments, automation, delivery tooling, DNS, identity, and day-2 operations."
+                    },
+                    {
+                        title: "Now I optimize change and reliability",
+                        text: "In reliability engineering, the hardest problems are usually between teams, pipelines, infrastructure, and incident handling. That is the layer I enjoy working in most."
+                    }
+                ],
                 competencies: [
-                    "Cloud: Azure (primary), AWS (some), Hybrid cloud, VMware vSphere",
+                    "Cloud: Azure (primary), Hybrid cloud, VMware vSphere",
                     "Containers: Kubernetes, Docker, Rancher, Harbor",
                     "Automation: Terraform, Ansible, PowerShell, Bash",
                     "CI/CD: GitHub Actions, Octopus Deploy, TeamCity, Jenkins",
@@ -412,84 +545,95 @@
                     "Monitoring: LogicMonitor, PRTG, Azure Monitor",
                     "Databases: SQL Server, PostgreSQL, Azure SQL, MongoDB",
                     "Version control: GitHub, Bitbucket"
+                ],
+                certifications: [
+                    { name: "Microsoft Certified: Azure Administrator (AZ-104)", issuer: "Microsoft", year: "2026" },
+                    { name: "GitHub Actions (GH-200)", issuer: "GitHub", year: "2026" },
+                    { name: "SUSE Certified: Rancher 2.5", issuer: "SUSE", year: "2021" }
                 ]
             },
             experience: [
                 {
                     title: "Reliability Engineer — Amadeus Labs",
                     dates: "Feb 2024 - Present",
+                    setup: "Hybrid",
                     highlights: [
-                        "Migrated QA pipelines from Jenkins to GitHub Actions, reducing pipeline maintenance overhead and aligning with team-owned workflows already in GitHub.",
-                        "Supported reliability and delivery operations for distributed systems serving Saudia, Southwest, and NEOM — environments where safe change and operational discipline are non-negotiable.",
-                        "Maintained and improved CI/CD processes for large-scale travel infrastructure, coordinating across teams to reduce deployment friction.",
-                        "Worked on monitoring, alerting, and observability improvements to catch issues earlier in the delivery cycle.",
-                        "Handled incident response and post-incident reviews with a focus on systemic fixes over repeated workarounds."
+                        "Moved QA pipelines from Jenkins to GitHub Actions so teams could own and maintain workflows where they already work.",
+                        "Support reliability and delivery for large travel systems, where safe change and operational discipline are critical.",
+                        "Help teams ship with less friction by improving CI/CD flow, environment consistency, and release hygiene.",
+                        "Improved monitoring and alerting so issues are caught earlier and with better operational context.",
+                        "Take part in incidents and post-incident reviews with a bias toward durable fixes, not temporary patches."
                     ]
                 },
                 {
                     title: "Infrastructure Engineer — Jumio",
                     dates: "Jul 2022 - Feb 2024",
+                    setup: "Remote",
                     highlights: [
-                        "Consolidated fragmented Azure subscriptions and cleaned up orphaned resources, reducing cloud spend by approximately $60k per year.",
-                        "Deployed Azure AD Connect Sync to bridge on-prem Active Directory with Azure AD, enabling consistent identity across hybrid environments.",
-                        "Rolled out LogicMonitor for unified observability across on-prem and Azure infrastructure, replacing blind spots with structured alerting.",
-                        "Managed Cloudflare DNS migration with zero public IP exposure, using Cloudflare tunnels to eliminate inbound firewall rules.",
-                        "Provisioned and maintained infrastructure for SUSE Rancher-based Kubernetes platform, including Harbor container registry."
+                        "Consolidated fragmented Azure subscriptions and cleaned up unused resources, saving about $60k per year.",
+                        "Set up Azure AD Connect Sync to keep identity consistent across on-prem AD and Azure AD.",
+                        "Rolled out LogicMonitor so on-prem and Azure systems could be observed from one place.",
+                        "Led Cloudflare DNS migration and adopted tunnels to remove direct public IP exposure.",
+                        "Built and maintained infrastructure for a SUSE Rancher Kubernetes platform, including Harbor.",
+                        "Improved certificate handling and service connectivity across environments to reduce day-2 operational noise."
                     ]
                 },
                 {
                     title: "System Administrator -> Senior System Administrator — Optym",
                     dates: "Aug 2017 - Jul 2022",
+                    setup: "Remote",
                     highlights: [
-                        "Built Terraform and Ansible automation for VM provisioning and configuration management across VMware vSphere, reducing setup time and manual drift.",
-                        "Managed production, UAT, and development infrastructure across Azure and on-prem VMware environments.",
-                        "Migrated datacenter workloads and expanded IaaS footprint as the organization moved workloads off legacy hardware.",
-                        "Administered Octopus Deploy and TeamCity for application delivery, managing deployment pipelines for internal products.",
-                        "Maintained HAProxy, NGINX, and IIS load balancing and web serving across environments; managed SSL certificates and DNS."
+                        "Built Terraform and Ansible automation for VM provisioning on VMware vSphere, cutting setup time and reducing drift.",
+                        "Managed production, UAT, and dev infrastructure across Azure and on-prem VMware.",
+                        "Helped migrate datacenter workloads as teams moved away from legacy hardware.",
+                        "Ran Octopus Deploy and TeamCity pipelines to make releases more repeatable and less hand-held.",
+                        "Maintained HAProxy, NGINX, and IIS layers, including SSL certificate and DNS operations.",
+                        "Worked closely with engineering teams to align platform standards with how products were actually delivered."
                     ]
                 },
                 {
                     title: "IT Support Engineer — Tech Mahindra",
                     dates: "Sep 2016 - Aug 2017",
+                    setup: "On-site",
                     highlights: [
-                        "Handled support incidents, hardware issues, and day-to-day user requests in a high-volume enterprise environment.",
-                        "Troubleshot Windows workstations, printers, network access, and application issues under SLA pressure.",
-                        "Developed communication habits and operational instincts that continue to inform incident handling today."
+                        "Handled daily support incidents, hardware issues, and user requests in a high-volume enterprise setup.",
+                        "Troubleshot Windows workstations, printers, network access, and application issues under tight SLAs.",
+                        "Built communication and triage habits that still guide how I handle incidents today."
                     ]
                 }
             ],
             projects: [
                 {
                     title: "Enterprise infrastructure automation and datacenter migration",
-                    description: "Built VM provisioning and configuration automation using Terraform and Ansible across VMware vSphere, reducing manual effort and supporting datacenter migration to modern IaaS.",
+                    description: "Built VM provisioning and configuration automation with Terraform and Ansible on VMware vSphere. It reduced manual effort and made a datacenter migration much smoother.",
                     stack: ["Terraform", "Ansible", "vSphere", "PowerShell"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
                     title: "CD pipeline optimization and Jenkins to GitHub Actions migration",
-                    description: "Migrated QA pipelines from Jenkins to GitHub Actions and improved release flow ownership across teams and environments.",
+                    description: "Migrated QA pipelines from Jenkins to GitHub Actions and helped teams take clearer ownership of release flow.",
                     stack: ["Octopus Deploy", "GitHub Actions", "CI/CD"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
                     title: "Azure tenant consolidation saving ~$60k/year",
-                    description: "Audited fragmented Azure subscriptions, removed orphaned resources, and consolidated environments to reduce annual cloud costs and improve manageability.",
+                    description: "Audited fragmented Azure subscriptions, removed orphaned resources, and consolidated environments to cut spend and simplify day-to-day operations.",
                     stack: ["Azure", "CSP", "Tenant Management"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
                     title: "Self-hosted Kubernetes platform with Rancher",
-                    description: "Provisioned and maintained a self-hosted Kubernetes platform with SUSE Rancher and Harbor for private, controlled image distribution.",
+                    description: "Provisioned and maintained a self-hosted Kubernetes platform with SUSE Rancher and Harbor for private, controlled image distribution across teams.",
                     stack: ["SUSE Rancher", "Kubernetes", "Harbor"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
                     title: "DNS migration to Cloudflare with zero public IP exposure",
-                    description: "Migrated DNS to Cloudflare and adopted tunnels to terminate inbound connectivity without exposing public IPs or opening inbound firewall rules.",
+                    description: "Migrated DNS to Cloudflare and used tunnels to handle inbound traffic without exposing public IPs or opening extra firewall rules.",
                     stack: ["Cloudflare", "DNS", "WAF", "Tunnels"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
@@ -498,7 +642,7 @@
         };
 
         const tabs = [
-            { key: "about", label: "About" },
+            { key: "story", label: "Story" },
             { key: "experience", label: "Experience" },
             { key: "projects", label: "Projects" }
         ];
@@ -513,6 +657,20 @@
         }
 
         function renderHeader(data) {
+            const contact = data.profile.contact || {};
+            const linkedInLabel = contact.linkedin
+                ? contact.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, "@").replace(/\/$/, "")
+                : "";
+            const githubLabel = contact.github
+                ? contact.github.replace(/^https?:\/\/(www\.)?github\.com\//, "@").replace(/\/$/, "")
+                : "";
+            const icons = {
+                location: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 5.8 11.8 6.1 12.1a1.2 1.2 0 0 0 1.8 0C13.2 20.8 19 14.3 19 9a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>',
+                timezone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 10.4V6.8h-2v6.2l4.6 2.8 1-1.7Z"/></svg>',
+                email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Zm2 .4v.2l7 4.8 7-4.8v-.2a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5Zm16 2.5-6.4 4.4a3.1 3.1 0 0 1-3.2 0L3 9.4v8.1c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5V9.4Z"/></svg>',
+                linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 8.9H3.6V20h3.2V8.9ZM5.2 3A2 2 0 1 0 5.2 7a2 2 0 0 0 0-4ZM20 13.7c0-3.2-1.7-5-4.3-5a3.8 3.8 0 0 0-3.4 1.8V8.9H9.1V20h3.2v-6c0-1.6.9-2.6 2.2-2.6 1.3 0 2 1 2 2.6v6H20v-6.3Z"/></svg>',
+                github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.2-.2-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .4.9.4 1.9.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.7 5 .4.3.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>'
+            };
             const tabButtons = tabs
                 .map((tab, index) => `
                     <button
@@ -527,29 +685,65 @@
                 `)
                 .join("");
 
+            const contactRows = [
+                contact.location
+                    ? `<li class="contact-item"><span class="contact-icon" aria-hidden="true">${icons.location}</span><span>${escapeHtml(contact.location)}</span></li>`
+                    : "",
+                contact.timezones
+                    ? `<li class="contact-item"><span class="contact-icon" aria-hidden="true">${icons.timezone}</span><span>${escapeHtml(contact.timezones)}</span></li>`
+                    : "",
+                contact.email
+                    ? `<li class="contact-item"><span class="contact-icon" aria-hidden="true">${icons.email}</span><span class="contact-value">${escapeHtml(contact.email)}</span></li>`
+                    : "",
+                contact.linkedin
+                    ? `<li class="contact-item"><span class="contact-icon" aria-hidden="true">${icons.linkedin}</span><a class="contact-link" href="${escapeHtml(contact.linkedin)}" target="_blank" rel="noreferrer">${escapeHtml(linkedInLabel)}</a></li>`
+                    : "",
+                contact.github
+                    ? `<li class="contact-item"><span class="contact-icon" aria-hidden="true">${icons.github}</span><a class="contact-link" href="${escapeHtml(contact.github)}" target="_blank" rel="noreferrer">${escapeHtml(githubLabel)}</a></li>`
+                    : ""
+            ].join("");
+
             return `
                 <header class="header">
-                    <div class="identity">
-                        <h1 class="name">${escapeHtml(data.profile.name)}</h1>
-                        <p class="focus">${escapeHtml(data.profile.focus)}</p>
+                    <div class="header-top">
+                        <div class="identity">
+                            <h1 class="name">${escapeHtml(data.profile.name)}</h1>
+                            <p class="focus">${escapeHtml(data.profile.focus)}</p>
+                        </div>
+                        <nav class="tabs" role="tablist" aria-label="Portfolio sections">
+                            ${tabButtons}
+                        </nav>
                     </div>
-                    <nav class="tabs" role="tablist" aria-label="Portfolio sections">
-                        ${tabButtons}
-                    </nav>
+                    <section class="contact-strip" aria-label="Contact">
+                        <ul class="contact-list">${contactRows}</ul>
+                    </section>
                 </header>
             `;
         }
 
-        function renderAbout(data) {
-            const competencyBadges = data.about.competencies
-                .map((item) => `<li class="badge">${escapeHtml(item)}</li>`)
-                .join("");
-
-            const storyParagraphs = (data.about.story?.paragraphs || [])
+        function renderStory(data) {
+            const storyParagraphs = (data.story?.paragraphs || [])
                 .map((text) => `<p class="story-paragraph">${escapeHtml(text)}</p>`)
                 .join("");
 
-            const storyChapters = (data.about.story?.chapters || [])
+            const competencyBadges = (data.story?.competencies || [])
+                .map((item) => `<li class="badge">${escapeHtml(item)}</li>`)
+                .join("");
+
+            const certifications = (data.story?.certifications || [])
+                .map((cert) => `
+                    <li class="cert-item">
+                        <p class="cert-name">${escapeHtml(cert.name)}</p>
+                        <p class="cert-meta">${escapeHtml(cert.issuer)} · ${escapeHtml(cert.year)}</p>
+                    </li>
+                `)
+                .join("");
+
+            const storyPrinciples = (data.story?.principles || [])
+                .map((item) => `<li class="story-principle">${escapeHtml(item)}</li>`)
+                .join("");
+
+            const storyChapters = (data.story?.chapters || [])
                 .map((chapter, index) => `
                     <li>
                         <p class="story-step-title">${index + 1}. ${escapeHtml(chapter.title)}</p>
@@ -558,28 +752,36 @@
                 `)
                 .join("");
 
-            const storySection = data.about.story
+            const storySection = data.story
                 ? `
                     <section class="story" aria-label="Story">
-                        <p class="story-title">Story</p>
+                        <p class="story-title">Path and principles</p>
+                        <p class="story-lead">${escapeHtml(data.story.lead || "")}</p>
                         ${storyParagraphs}
+                        <ul class="story-principles">${storyPrinciples}</ul>
                         <ol class="story-steps">${storyChapters}</ol>
+                        <section class="callout" aria-label="Core competencies">
+                            <div class="callout-emoji" aria-hidden="true">⚙️</div>
+                            <div>
+                                <p class="callout-title">Core competencies</p>
+                                <ul class="badge-list">${competencyBadges}</ul>
+                            </div>
+                        </section>
+                        <section class="callout" aria-label="Certifications">
+                            <div class="callout-emoji" aria-hidden="true">🎓</div>
+                            <div>
+                                <p class="callout-title">Certifications</p>
+                                <ul class="cert-list">${certifications}</ul>
+                            </div>
+                        </section>
                     </section>
                 `
                 : "";
 
             return `
-                <section class="tab-panel is-active" id="panel-about" role="tabpanel" aria-labelledby="tab-about">
-                    <h2 class="panel-title">🧭 About</h2>
-                    <p class="intro">${escapeHtml(data.about.intro)}</p>
+                <section class="tab-panel is-active" id="panel-story" role="tabpanel" aria-labelledby="tab-story">
+                    <h2 class="panel-title">📖 Story</h2>
                     ${storySection}
-                    <section class="callout" aria-label="Core competencies">
-                        <div class="callout-emoji" aria-hidden="true">⚙️</div>
-                        <div>
-                            <p class="callout-title">Core Competencies</p>
-                            <ul class="badge-list">${competencyBadges}</ul>
-                        </div>
-                    </section>
                 </section>
             `;
         }
@@ -595,7 +797,7 @@
                         <article class="role">
                             <div class="role-head">
                                 <h3 class="role-title">${escapeHtml(role.title)}</h3>
-                                <span class="role-dates">${escapeHtml(role.dates)}</span>
+                                <span class="role-dates">${escapeHtml(role.dates)}${role.setup ? ` · ${escapeHtml(role.setup)}` : ""}</span>
                             </div>
                             <ul class="role-bullets">${bullets}</ul>
                         </article>
@@ -623,7 +825,6 @@
                         <h3 class="project-title">${escapeHtml(project.title)}</h3>
                         <p class="project-desc">${escapeHtml(project.description)}</p>
                         <div class="project-stack">${stackBadges}</div>
-                        <a class="project-link" href="${escapeHtml(project.linkHref)}" target="_blank" rel="noreferrer">${escapeHtml(project.linkLabel)}</a>
                     </article>
                 `;
                 })
@@ -642,7 +843,7 @@
             root.innerHTML = `
                 ${renderHeader(data)}
                 <section class="content">
-                    ${renderAbout(data)}
+                    ${renderStory(data)}
                     ${renderExperience(data)}
                     ${renderProjects(data)}
                 </section>
