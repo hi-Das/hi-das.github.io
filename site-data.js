@@ -86,7 +86,7 @@ window.siteContent = {
                 linkedin: "https://linkedin.com/in/manyabar",
                 github: "https://github.com/hi-Das",
                 location: "Bengaluru, India",
-                timezones: "GMT+5:30 | GMT+1/+2"
+                timezones: "GMT+5:30 | GMT+3"
             }
         },
         story: {
