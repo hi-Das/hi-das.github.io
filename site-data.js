@@ -3,71 +3,11 @@ window.siteContent = {
         name: "Manyabar Das",
         role: "Platform Reliability / Infrastructure",
         headline: "I build infrastructure and delivery systems that teams can operate under pressure.",
-        bio: "Reliability and infrastructure engineer with 10+ years across IT support, systems administration, cloud operations, and SRE. I work on the systems behind software delivery: CI/CD, Azure and hybrid infrastructure, identity, observability, and incident response practices that make production easier to run.",
+        bio: "Reliability and infrastructure engineer with 10 years across IT support, systems administration, cloud operations, and SRE. I work on the systems behind software delivery: CI/CD, Azure and hybrid infrastructure, identity, observability, and incident response practices that make production easier to run.",
         email: "hi-das@outlook.com",
         linkedin: "https://linkedin.com/in/manyabar",
         github: "https://github.com/hi-Das",
         meta: ["Bengaluru, India · UTC+5:30", "US B1 visa", "60-day notice", "Open to remote and hybrid roles"]
-    },
-    signals: [
-        {
-            value: "10+",
-            label: "Years across IT support, infrastructure, and reliability engineering"
-        },
-        {
-            value: "~$60k/yr",
-            label: "Azure savings from subscription consolidation and cleanup"
-        },
-        {
-            value: "Jenkins -> GHA",
-            label: "Recent delivery modernization work in enterprise environments"
-        }
-    ],
-    story: {
-        intro: [
-            "I did not enter tech through a clean platform-engineering path. I started in IT support, where the work is immediate, messy, and impossible to fake. That background still shapes how I think: systems are only good if people can actually operate them when something goes wrong.",
-            "Over time I moved from keeping endpoints and users functioning, to owning infrastructure, and then to reliability work closer to delivery pipelines, cloud platforms, and operational guardrails. The through-line has stayed the same: remove friction, reduce avoidable failure, and leave systems easier to understand than I found them.",
-            "Most of my production work has been on Azure, but the fundamentals matter more to me than the brand of cloud. I understand compute, networking, and storage well enough to move across cloud environments and work from first principles."
-        ],
-        chapters: [
-            {
-                step: "01",
-                title: "Started where failure is visible",
-                body: "My first roles were support-heavy. That taught me patience, direct communication, and a practical respect for operations. When someone is blocked, elegant architecture matters less than whether the system is understandable and recoverable."
-            },
-            {
-                step: "02",
-                title: "Moved into infrastructure ownership",
-                body: "At Optym and Jumio, the work became broader: provisioning, hybrid environments, automation, delivery tooling, DNS, identity, and day-2 operations. I learned to connect individual fixes to platform-level leverage."
-            },
-            {
-                step: "03",
-                title: "Now I optimize change and reliability",
-                body: "In reliability engineering, the interesting problems are rarely isolated. They sit between teams, pipelines, infrastructure, and incident handling. That is the layer I like working in most: where better systems produce calmer teams."
-            }
-        ],
-        principles: [
-            {
-                title: "Operate for clarity",
-                body: "I prefer systems that are observable, legible, and boring in the right ways over clever setups that only their authors can debug."
-            },
-            {
-                title: "Automate the repeated pain",
-                body: "Automation matters most when it removes recurring operational drag: environment creation, deployment flow, identity plumbing, and routine recovery work."
-            },
-            {
-                title: "Protect delivery speed with guardrails",
-                body: "The goal is not to slow teams down. It is to make safe change the default so teams can move faster without creating future incident debt."
-            },
-            {
-                title: "Be easy to work with",
-                body: "I tend to listen first, explain things plainly, and try to make collaboration feel calm and practical."
-            },
-            {
-                title: "No judgment, no ego",
-                body: "When someone needs help, I focus on the problem and the next useful step instead of fault-finding or performance."
-            }
-        ]
     },
     experience: [
         {
@@ -81,8 +21,7 @@ window.siteContent = {
                 "Maintained CI/CD paths across environments and worked with multiple teams to reduce failed or blocked deployments.",
                 "Improved monitoring and alert coverage so failures were detected earlier in the delivery cycle.",
                 "Participated in incident response and post-incident reviews, documenting follow-up actions to avoid repeat failures."
-            ],
-            stack: ["GitHub Actions", "Jenkins", "Azure", "CI/CD", "Distributed systems", "Incident response"]
+            ]
         },
         {
             period: "Jul 2022 – Feb 2024",
@@ -95,8 +34,7 @@ window.siteContent = {
                 "Rolled out LogicMonitor across on-prem and Azure systems to centralize metrics and alerting.",
                 "Migrated DNS to Cloudflare and used Cloudflare Tunnels so services stayed reachable without exposing public IPs.",
                 "Provisioned and maintained a SUSE Rancher-based Kubernetes platform, including Harbor as the internal image registry."
-            ],
-            stack: ["Azure", "Azure AD", "AD Connect", "LogicMonitor", "Cloudflare", "Rancher", "Kubernetes", "Harbor"]
+            ]
         },
         {
             period: "Aug 2017 – Jul 2022",
@@ -109,8 +47,7 @@ window.siteContent = {
                 "Supported datacenter workload migration and expansion of the Azure IaaS footprint.",
                 "Administered Octopus Deploy and TeamCity pipelines used for internal product releases.",
                 "Maintained HAProxy, NGINX, and IIS load balancing and web serving; managed SSL certificates and DNS."
-            ],
-            stack: ["Terraform", "Ansible", "VMware vSphere", "Azure", "PowerShell", "Octopus Deploy", "TeamCity", "HAProxy", "NGINX"]
+            ]
         },
         {
             period: "Sep 2016 – Aug 2017",
@@ -121,35 +58,7 @@ window.siteContent = {
                 "Handled support incidents, hardware issues, and day-to-day user requests in a high-volume enterprise environment.",
                 "Troubleshot Windows workstations, printers, network access, and application issues under SLA pressure.",
                 "Developed communication habits and operational instincts that continue to inform incident handling today."
-            ],
-            stack: ["Windows", "Active Directory", "IT support", "Troubleshooting"]
-        }
-    ],
-    impact: [
-        {
-            context: "Terraform · Ansible · vSphere · PowerShell",
-            title: "Infrastructure automation for repeatable VM provisioning",
-            body: "At Optym, built Terraform and Ansible workflows for VM provisioning and baseline configuration on VMware vSphere. This replaced ticket-driven manual setup with a repeatable process and supported datacenter migration work."
-        },
-        {
-            context: "Octopus Deploy · GitHub Actions · CI/CD",
-            title: "Delivery pipeline modernization and simplification",
-            body: "At Amadeus, migrated QA pipelines from Jenkins to GitHub Actions so delivery workflows lived where teams already worked. At Optym, maintained and tuned Octopus Deploy release pipelines across environments."
-        },
-        {
-            context: "Azure · CSP · tenant management",
-            title: "Azure tenant consolidation saving ~$60k/year",
-            body: "At Jumio, audited fragmented Azure subscriptions across CSP accounts, removed orphaned resources, and consolidated environments. The cleanup reduced annual Azure spend by about $60k and made ownership boundaries clearer."
-        },
-        {
-            context: "SUSE Rancher · Kubernetes · Harbor",
-            title: "Self-hosted Kubernetes platform operations",
-            body: "At Jumio, provisioned and maintained a self-hosted Kubernetes platform using SUSE Rancher, with Harbor as the internal container registry for controlled image distribution."
-        },
-        {
-            context: "Cloudflare · DNS · WAF · tunnels",
-            title: "DNS migration to Cloudflare with zero public IP exposure",
-            body: "At Jumio, migrated DNS to Cloudflare and adopted Cloudflare Tunnels so inbound access did not require exposing public IPs or opening inbound firewall rules. Added WAF rules in front of public-facing services."
+            ]
         }
     ],
     toolbox: [
@@ -182,9 +91,8 @@ window.siteContent = {
         },
         story: {
             lead:
-                "I am a reliability and infrastructure engineer with 10+ years in IT support, systems administration, cloud operations, and SRE. Most of my hands-on work has been in Azure and hybrid environments, with a focus on systems that are deployable, diagnosable, and recoverable.",
+                "I am a reliability and infrastructure engineer with 10 years in IT support, systems administration, cloud operations, and SRE. Most of my hands-on work has been in Azure and hybrid environments, with a focus on systems that are deployable, diagnosable, and recoverable.",
             paragraphs: [
-                "I care about systems, but I care just as much about the people who have to run them every day.",
                 "I did not come into tech through a polished platform path. I started in support, where problems are real, urgent, and very human. That shaped me: a system is only good if someone can understand it and recover it when something breaks.",
                 "Over time I moved from user support into infrastructure ownership, and then into reliability around pipelines, cloud platforms, and incident response. The goal has stayed simple: remove friction, reduce avoidable failures, and leave things clearer than I found them.",
                 "Although most of my production work has been on Azure, my core understanding of compute, networking, and storage is solid. I am comfortable with the underlying cloud primitives and can work across clouds without losing sight of the basics."
@@ -200,22 +108,7 @@ window.siteContent = {
             lookingFor: {
                 title: "What I Am Looking For",
                 body: "So far, I have worked in both large and small corporate environments, and I am grateful for what I have learned and the people I have worked with. At times, I compare myself with others and feel I have more to prove. I want to change that by working at a higher level of engineering, ideally in a greenfield environment where I can own problems end-to-end, with less bureaucracy and more focus on shipping. Ideally, I am looking for a small, tight-knit team ❤️"
-            
             },
-            chapters: [
-                {
-                    title: "Started where failure is visible",
-                    text: "My first roles were support-heavy. They taught me patience, direct communication, and respect for the people on the receiving end of outages."
-                },
-                {
-                    title: "Moved into infrastructure ownership",
-                    text: "At Optym and Jumio, my scope grew into provisioning, hybrid environments, automation, delivery tooling, DNS, identity, and day-2 operations."
-                },
-                {
-                    title: "Now I optimize change and reliability",
-                    text: "In reliability engineering, the hardest problems are usually between teams, pipelines, infrastructure, and incident handling. That is the layer I enjoy working in most."
-                }
-            ],
             competencies: [
                 "Cloud: Azure (primary), Hybrid cloud, VMware vSphere",
                 "Containers: Kubernetes, Docker, Rancher, Harbor",
@@ -233,20 +126,6 @@ window.siteContent = {
                 { name: "SUSE Certified: Rancher 2.5", issuer: "SUSE", year: "2021" }
             ]
         },
-        signals: [
-            {
-                value: "10+",
-                label: "Years across IT support, infrastructure, and reliability engineering"
-            },
-            {
-                value: "~$60k/yr",
-                label: "Azure savings from subscription consolidation and cleanup"
-            },
-            {
-                value: "Jenkins -> GHA",
-                label: "Recent delivery modernization work in enterprise environments"
-            }
-        ],
         experience: [
             {
                 dates: "Feb 2024 – Present",
@@ -259,8 +138,7 @@ window.siteContent = {
                     "Maintained CI/CD paths across environments and worked with multiple teams to reduce failed or blocked deployments.",
                     "Improved monitoring and alert coverage so failures were detected earlier in the delivery cycle.",
                     "Participated in incident response and post-incident reviews, documenting follow-up actions to avoid repeat failures."
-                ],
-                stack: ["GitHub Actions", "Jenkins", "Azure", "CI/CD", "Distributed systems", "Incident response"]
+                ]
             },
             {
                 dates: "Jul 2022 – Feb 2024",
@@ -274,8 +152,7 @@ window.siteContent = {
                     "Led Cloudflare DNS migration and adopted Cloudflare Tunnels to remove direct public IP exposure.",
                     "Provisioned and maintained infrastructure for a SUSE Rancher Kubernetes platform, including Harbor.",
                     "Improved certificate handling and service connectivity across environments to reduce day-2 operational issues."
-                ],
-                stack: ["Azure", "Azure AD", "AD Connect", "LogicMonitor", "Cloudflare", "Rancher", "Kubernetes", "Harbor"]
+                ]
             },
             {
                 dates: "Aug 2017 – Jul 2022",
@@ -288,8 +165,7 @@ window.siteContent = {
                     "Supported datacenter workload migration and expansion of the Azure IaaS footprint.",
                     "Administered Octopus Deploy and TeamCity pipelines used for internal product releases.",
                     "Maintained HAProxy, NGINX, and IIS load balancing and web serving; managed SSL certificates and DNS."
-                ],
-                stack: ["Terraform", "Ansible", "VMware vSphere", "Azure", "PowerShell", "Octopus Deploy", "TeamCity", "HAProxy", "NGINX"]
+                ]
             },
             {
                 dates: "Sep 2016 – Aug 2017",
@@ -300,35 +176,7 @@ window.siteContent = {
                     "Handled support incidents, hardware issues, and day-to-day user requests in a high-volume enterprise environment.",
                     "Troubleshot Windows workstations, printers, network access, and application issues under SLA pressure.",
                     "Developed communication habits and operational instincts that continue to inform incident handling today."
-                ],
-                stack: ["Windows", "Active Directory", "IT support", "Troubleshooting"]
-            }
-        ],
-        impact: [
-            {
-                context: "Terraform · Ansible · vSphere · PowerShell",
-                title: "Infrastructure automation for repeatable VM provisioning",
-                body: "At Optym, built Terraform and Ansible workflows for VM provisioning and baseline configuration on VMware vSphere. This replaced ticket-driven manual setup with a repeatable process and supported datacenter migration work."
-            },
-            {
-                context: "Octopus Deploy · GitHub Actions · CI/CD",
-                title: "Delivery pipeline modernization and simplification",
-                body: "At Amadeus, migrated QA pipelines from Jenkins to GitHub Actions so delivery workflows lived where teams already worked. At Optym, maintained and tuned Octopus Deploy release pipelines across environments."
-            },
-            {
-                context: "Azure · CSP · tenant management",
-                title: "Azure tenant consolidation saving ~$60k/year",
-                body: "At Jumio, audited fragmented Azure subscriptions across CSP accounts, removed orphaned resources, and consolidated environments. The cleanup reduced annual Azure spend by about $60k and made ownership boundaries clearer."
-            },
-            {
-                context: "SUSE Rancher · Kubernetes · Harbor",
-                title: "Self-hosted Kubernetes platform operations",
-                body: "At Jumio, provisioned and maintained a self-hosted Kubernetes platform using SUSE Rancher, with Harbor as the internal container registry for controlled image distribution."
-            },
-            {
-                context: "Cloudflare · DNS · WAF · tunnels",
-                title: "DNS migration to Cloudflare with zero public IP exposure",
-                body: "At Jumio, migrated DNS to Cloudflare and adopted Cloudflare Tunnels so inbound access did not require exposing public IPs or opening inbound firewall rules. Added WAF rules in front of public-facing services."
+                ]
             }
         ],
         projects: [
@@ -336,74 +184,44 @@ window.siteContent = {
                 title: "Control Tower: internal developer platform for VM, LB, Ansible, and shell operations",
                 description: "Built a monorepo-based internal platform with a single HAProxy entry point, five apps, shared frontend components, and Express backends. The system uses path-based routing, a shared SQLite store, Azure discovery, and live execution streams so operators can manage VM, load balancer, Ansible, and shell workflows from one place.",
                 value: "Solved the problem of scattered operator tools by putting common infrastructure workflows behind one platform with shared navigation, routing, and state.",
-                stack: ["HAProxy", "React", "Express", "SQLite", "WebSocket", "Azure"],
-                linkLabel: "Read architecture docs",
-                linkHref: "https://docs.ns.rocks/"
+                stack: ["HAProxy", "React", "Express", "SQLite", "WebSocket", "Azure"]
             },
             {
                 title: "Infrastructure automation for repeatable VM provisioning",
                 description: "Designed a Terraform + Ansible flow to provision VMs on VMware vSphere from reusable templates, apply baseline hardening, and hand off ready instances to application teams. This reduced one-off manual setup and gave operations a consistent build pattern during datacenter migration.",
                 value: "Solved the problem of slow, inconsistent VM build requests by making provisioning repeatable and easier to hand over to teams.",
-                stack: ["Terraform", "Ansible", "vSphere", "PowerShell"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["Terraform", "Ansible", "vSphere", "PowerShell"]
             },
             {
                 title: "Azure tenant consolidation saving ~$60k/year",
                 description: "Ran a subscription-level cleanup across fragmented Azure tenants and CSP accounts by tagging ownership gaps, removing unused resources, and consolidating duplicated services. The effort brought annual spend down by about $60k and made ongoing cost review and accountability much easier.",
                 value: "Solved the problem of hidden and duplicated cloud spend by making ownership and cleanup visible again.",
-                stack: ["Azure", "CSP", "Tenant Management"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["Azure", "CSP", "Tenant Management"]
             },
             {
                 title: "Hybrid identity integration with Azure AD Connect",
                 description: "Implemented Azure AD Connect Sync between on-prem Active Directory and Azure AD, including OU and attribute mapping choices aligned with existing access patterns. This gave teams a single, consistent identity path across legacy workloads and cloud-hosted services.",
                 value: "Solved the problem of split identity systems so users and admins could rely on one consistent access path across hybrid environments.",
-                stack: ["Azure AD", "Active Directory", "AD Connect", "Hybrid Identity"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["Azure AD", "Active Directory", "AD Connect", "Hybrid Identity"]
             },
             {
                 title: "Unified monitoring rollout across on-prem and Azure",
                 description: "Rolled out LogicMonitor across on-prem and Azure infrastructure, onboarded core services, and tuned alert thresholds to reduce noisy pages. Built role-focused dashboards so infra and application teams could triage incidents from a shared operational view.",
                 value: "Solved the problem of blind spots and noisy alerts by giving support teams one place to see what was failing and why.",
-                stack: ["LogicMonitor", "Azure Monitor", "Alerting", "Observability"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["LogicMonitor", "Azure Monitor", "Alerting", "Observability"]
             },
             {
                 title: "Self-hosted Kubernetes platform operations",
                 description: "Provisioned and operated a self-hosted Kubernetes platform using SUSE Rancher, including cluster lifecycle tasks, access control, and routine maintenance. Integrated Harbor as the internal registry so images could be managed and promoted through a private, controlled path.",
                 value: "Solved the problem of ad hoc cluster and image handling by standardizing how workloads were deployed and stored.",
-                stack: ["SUSE Rancher", "Kubernetes", "Harbor"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["SUSE Rancher", "Kubernetes", "Harbor"]
             },
             {
                 title: "DNS migration to Cloudflare with zero public IP exposure",
                 description: "Planned and executed DNS migration to Cloudflare, then used Cloudflare Tunnels to publish services without exposing origin public IPs. Added WAF rules and routing validation checks to keep external access controlled during and after cutover.",
                 value: "Solved the problem of exposed origins and brittle inbound routing by moving access behind tunnels and policy checks.",
-                stack: ["Cloudflare", "DNS", "WAF", "Tunnels"],
-                linkLabel: "View repository",
-                linkHref: "https://github.com/hi-Das"
+                stack: ["Cloudflare", "DNS", "WAF", "Tunnels"]
             }
-        ],
-        toolbox: [
-            { category: "Cloud", items: ["Azure (primary)", "AWS (some)", "Hybrid cloud", "VMware vSphere"] },
-            { category: "Containers", items: ["Kubernetes", "Docker", "Rancher", "Harbor"] },
-            { category: "Automation", items: ["Terraform", "Ansible", "PowerShell", "Bash"] },
-            { category: "CI/CD", items: ["GitHub Actions", "Octopus Deploy", "TeamCity", "Jenkins"] },
-            { category: "Web / routing", items: ["NGINX", "HAProxy", "IIS", "Cloudflare", "Azure LB"] },
-            { category: "Identity", items: ["Azure AD", "Active Directory", "Keycloak"] },
-            { category: "Monitoring", items: ["LogicMonitor", "PRTG", "Azure Monitor"] },
-            { category: "Databases", items: ["SQL Server", "PostgreSQL", "Azure SQL", "MongoDB"] },
-            { category: "Version control", items: ["GitHub", "Bitbucket"] }
-        ],
-        certifications: [
-            { name: "Microsoft Certified: Azure Administrator (AZ-104)", issuer: "Microsoft", year: "2026" },
-            { name: "GitHub Actions (GH-200)", issuer: "GitHub", year: "2026" },
-            { name: "SUSE Certified: Rancher 2.5", issuer: "SUSE", year: "2021" }
         ]
     },
     footer: ""
