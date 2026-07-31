@@ -122,11 +122,15 @@
         }
 
         .tabs-wrap {
+            position: sticky;
+            top: 0;
+            z-index: 10;
             margin-top: 16px;
             padding: 5px;
             border: 1px solid var(--line);
             border-radius: 10px;
-            background: var(--surface);
+            background: rgba(247, 247, 245, 0.95);
+            backdrop-filter: blur(6px);
         }
 
         .tabs {
@@ -176,13 +180,6 @@
             display: block;
         }
 
-        .panel-title {
-            margin: 0 0 14px;
-            font-size: 1.03rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
         .intro {
             margin: 0;
             color: #2a2a29;
@@ -191,9 +188,7 @@
         }
 
         .story {
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid var(--line);
+            margin-top: 0;
         }
 
         .story-title {
@@ -213,8 +208,9 @@
 
         .story-lead {
             margin: 10px 0 0;
-            color: #2a2a29;
+            color: var(--text);
             font-size: 0.98rem;
+            font-weight: 500;
             line-height: 1.72;
         }
 
@@ -324,6 +320,12 @@
         .timeline {
             display: grid;
             gap: 0;
+        }
+
+        .exp-summary {
+            margin: 0 0 6px;
+            color: var(--muted);
+            font-size: 0.84rem;
         }
 
         .role {
@@ -745,14 +747,16 @@
                             <h1 class="name">${escapeHtml(data.profile.name)}</h1>
                             <p class="focus">${escapeHtml(data.profile.focus)}</p>
                         </div>
-                        <nav class="tabs" role="tablist" aria-label="Portfolio sections">
-                            ${tabButtons}
-                        </nav>
                     </div>
                     <section class="contact-strip" aria-label="Contact">
                         <ul class="contact-list">${contactRows}</ul>
                     </section>
                 </header>
+                <div class="tabs-wrap">
+                    <nav class="tabs" role="tablist" aria-label="Portfolio sections">
+                        ${tabButtons}
+                    </nav>
+                </div>
             `;
         }
 
@@ -818,13 +822,20 @@
 
             return `
                 <section class="tab-panel is-active" id="panel-story" role="tabpanel" aria-labelledby="tab-story">
-                    <h2 class="panel-title">📖 Story</h2>
                     ${storySection}
                 </section>
             `;
         }
 
         function renderExperience(data) {
+            const earliest = data.experience[data.experience.length - 1];
+            const yearMatch = earliest?.dates?.match(/\b(\d{4})\b/);
+            const startYear = yearMatch ? parseInt(yearMatch[1]) : null;
+            const yearsTotal = startYear ? new Date().getFullYear() - startYear : null;
+            const yearsSummary = yearsTotal
+                ? `<p class="exp-summary">${yearsTotal}+ years of experience</p>`
+                : "";
+
             const roles = data.experience
                 .map((role) => {
                     const bullets = (role.highlights || role.bullets || [])
@@ -848,7 +859,7 @@
 
             return `
                 <section class="tab-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience">
-                    <h2 class="panel-title">🗂️ Experience</h2>
+                    ${yearsSummary}
                     <div class="timeline">${roles}</div>
                 </section>
             `;
@@ -874,7 +885,6 @@
 
             return `
                 <section class="tab-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
-                    <h2 class="panel-title">🧩 Projects</h2>
                     <div class="projects">${projectItems}</div>
                 </section>
             `;
