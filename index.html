@@ -258,6 +258,13 @@
             line-height: 1.65;
         }
 
+        .story-target-copy {
+            margin: 8px 0 0;
+            color: #3a3a38;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
         .cert-list {
             list-style: none;
             margin: 10px 0 0;
@@ -512,9 +519,10 @@
 <body>
     <main class="page" id="app"></main>
 
+    <script src="site-data.js"></script>
     <script>
-        // Edit your site content here. No HTML/CSS edits needed for normal updates.
-        const portfolioData = {
+        /* Edit your site content here. No HTML/CSS edits needed for normal updates.
+        const legacyPortfolioData = {
             profile: {
                 name: "Manyabar DAS",
                 focus: "Platform Reliability / Infrastructure",
@@ -536,9 +544,12 @@
                     "Although most of my production work has been on Azure, my core understanding of compute, networking, and storage is solid. I am comfortable with the underlying cloud primitives and can work across clouds without losing sight of the basics."
                 ],
                 principles: [
+
                     "Clarity first: if a system is hard to read, it is hard to trust in production.",
                     "Automate the painful repeats: boring manual work is where mistakes and burnout grow.",
-                    "Guardrails over gatekeeping: teams should move fast without creating tomorrow's incidents."
+                    "Guardrails over gatekeeping: teams should move fast without creating tomorrow's incidents.",
+                    "Be easy to work with: I listen first, explain things plainly, and try to make collaboration feel calm.",
+                    "No judgment, no ego: if someone needs help, I focus on the problem and the next useful step."
                 ],
                 chapters: [
                     {
@@ -684,6 +695,8 @@
                 }
             ]
         };
+        */
+        const portfolioData = window.siteContent?.portfolio;
 
         const tabs = [
             { key: "story", label: "Story" },
@@ -787,6 +800,10 @@
                 .map((item) => `<li class="story-principle">${escapeHtml(item)}</li>`)
                 .join("");
 
+            const lookingForBody = data.story?.lookingFor?.body
+                ? `<p class="story-target-copy">${escapeHtml(data.story.lookingFor.body)}</p>`
+                : "";
+
             const storyChapters = (data.story?.chapters || [])
                 .map((chapter, index) => `
                     <li>
@@ -803,6 +820,15 @@
                         <p class="story-lead">${escapeHtml(data.story.lead || "")}</p>
                         ${storyParagraphs}
                         <ul class="story-principles">${storyPrinciples}</ul>
+                        ${data.story?.lookingFor ? `
+                        <section class="callout" aria-label="What I am looking for">
+                            <div class="callout-emoji" aria-hidden="true">🎯</div>
+                            <div>
+                                <p class="callout-title">${escapeHtml(data.story.lookingFor.title || "What I Want To Build Next")}</p>
+                                ${lookingForBody}
+                            </div>
+                        </section>
+                        ` : ""}
                         <ol class="story-steps">${storyChapters}</ol>
                         <section class="callout" aria-label="Core competencies">
                             <div class="callout-emoji" aria-hidden="true">⚙️</div>
@@ -833,7 +859,7 @@
         function renderExperience(data) {
             const roles = data.experience
                 .map((role) => {
-                    const bullets = role.highlights
+                    const bullets = (role.highlights || role.bullets || [])
                         .map((point) => `<li>${escapeHtml(point)}</li>`)
                         .join("");
 
