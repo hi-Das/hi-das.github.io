@@ -95,10 +95,10 @@ window.siteContent = {
             paragraphs: [
                 "I did not come into tech through a polished platform path. I started in support, where problems are real, urgent, and very human. That shaped me: a system is only good if someone can understand it and recover it when something breaks.",
                 "Over time I moved from user support into infrastructure ownership, and then into reliability around pipelines, cloud platforms, and incident response. The goal has stayed simple: remove friction, reduce avoidable failures, and leave things clearer than I found them.",
-                "Although most of my production work has been on Azure, my core understanding of compute, networking, and storage is solid. I am comfortable with the underlying cloud primitives and can work across clouds without losing sight of the basics."
+                "Although most of my production work has been on Azure, my compute understanding goes down to the hypervisor layer — VMware vSphere and ESXi before the cloud abstraction ever existed for me. That grounding makes it easier to reason from first principles and work across environments without losing the thread."
             ],
             principles: [
-                "I like to ask 'why' a lot and sometimes people don't like it 😒",
+                "I like to ask 'why' a lot — it usually leads to a better answer 😊",
                 "I am not a yes-man, even though I loved the movie 😁",
                 "Automate the repeats, which means more time for Netflix 😄",
                 "If we focus only on closing tickets, we are probably doing less engineering 🙁",
