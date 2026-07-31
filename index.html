@@ -236,28 +236,6 @@
             line-height: 1.6;
         }
 
-        .story-steps {
-            list-style: none;
-            margin: 12px 0 0;
-            padding: 0;
-            display: grid;
-            gap: 10px;
-        }
-
-        .story-step-title {
-            margin: 0;
-            font-size: 0.9rem;
-            font-weight: 620;
-            letter-spacing: -0.01em;
-        }
-
-        .story-step-text {
-            margin: 4px 0 0;
-            color: var(--muted);
-            font-size: 0.88rem;
-            line-height: 1.65;
-        }
-
         .story-target-copy {
             margin: 8px 0 0;
             color: #3a3a38;
@@ -804,15 +782,6 @@
                 ? `<p class="story-target-copy">${escapeHtml(data.story.lookingFor.body)}</p>`
                 : "";
 
-            const storyChapters = (data.story?.chapters || [])
-                .map((chapter, index) => `
-                    <li>
-                        <p class="story-step-title">${index + 1}. ${escapeHtml(chapter.title)}</p>
-                        <p class="story-step-text">${escapeHtml(chapter.text)}</p>
-                    </li>
-                `)
-                .join("");
-
             const storySection = data.story
                 ? `
                     <section class="story" aria-label="Story">
@@ -829,7 +798,6 @@
                             </div>
                         </section>
                         ` : ""}
-                        <ol class="story-steps">${storyChapters}</ol>
                         <section class="callout" aria-label="Core competencies">
                             <div class="callout-emoji" aria-hidden="true">⚙️</div>
                             <div>
