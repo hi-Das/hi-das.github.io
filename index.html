@@ -355,11 +355,22 @@
             gap: 14px;
         }
 
+        .role-main {
+            min-width: 0;
+        }
+
         .role-title {
             margin: 0;
             font-size: 0.98rem;
             font-weight: 650;
             letter-spacing: -0.01em;
+        }
+
+        .role-company {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 0.84rem;
+            line-height: 1.5;
         }
 
         .role-dates {
@@ -380,8 +391,8 @@
             padding-left: 18px;
             color: var(--muted);
             display: grid;
-            gap: 7px;
-            line-height: 1.6;
+            gap: 5px;
+            line-height: 1.45;
         }
 
         .projects {
@@ -414,6 +425,13 @@
             margin: 7px 0 0;
             color: var(--muted);
             font-size: 0.88rem;
+        }
+
+        .project-value {
+            margin: 8px 0 0;
+            color: #333330;
+            font-size: 0.84rem;
+            line-height: 1.55;
         }
 
         .project-stack {
@@ -499,7 +517,7 @@
         const portfolioData = {
             profile: {
                 name: "Manyabar DAS",
-                focus: "Infrastructure / DevOps / Reliability",
+                focus: "Platform Reliability / Infrastructure",
                 contact: {
                     email: "hi-das@outlook.com",
                     linkedin: "https://linkedin.com/in/manyabar",
@@ -510,11 +528,12 @@
             },
             story: {
                 lead:
-                    "I am a reliability and infrastructure engineer with 10+ years in IT support, systems administration, cloud operations, and SRE. Most of my hands-on work has been in Azure, and I focus on patterns that translate well across cloud platforms.",
+                    "I am a reliability and infrastructure engineer with 10+ years in IT support, systems administration, cloud operations, and SRE. Most of my hands-on work has been in Azure and hybrid environments, with a focus on systems that are deployable, diagnosable, and recoverable.",
                 paragraphs: [
                     "I care about systems, but I care just as much about the people who have to run them every day.",
                     "I did not come into tech through a polished platform path. I started in support, where problems are real, urgent, and very human. That shaped me: a system is only good if someone can understand it and recover it when something breaks.",
-                    "Over time I moved from user support into infrastructure ownership, and then into reliability work around pipelines, cloud platforms, and incident response. The goal has stayed simple: remove friction, reduce avoidable failures, and leave things clearer than I found them."
+                    "Over time I moved from user support into infrastructure ownership, and then into reliability work around pipelines, cloud platforms, and incident response. The goal has stayed simple: remove friction, reduce avoidable failures, and leave things clearer than I found them.",
+                    "Although most of my production work has been on Azure, my core understanding of compute, networking, and storage is solid. I am comfortable with the underlying cloud primitives and can work across clouds without losing sight of the basics."
                 ],
                 principles: [
                     "Clarity first: if a system is hard to read, it is hard to trust in production.",
@@ -555,44 +574,48 @@
             experience: [
                 {
                     title: "Reliability Engineer — Amadeus Labs",
+                    company: "Global travel technology for airline booking and retail.",
                     dates: "Feb 2024 - Present",
                     setup: "Hybrid",
                     highlights: [
-                        "Moved QA pipelines from Jenkins to GitHub Actions so teams could own and maintain workflows where they already work.",
-                        "Support reliability and delivery for large travel systems, where safe change and operational discipline are critical.",
-                        "Help teams ship with less friction by improving CI/CD flow, environment consistency, and release hygiene.",
-                        "Improved monitoring and alerting so issues are caught earlier and with better operational context.",
-                        "Take part in incidents and post-incident reviews with a bias toward durable fixes, not temporary patches."
+                        "Migrated QA pipelines from Jenkins to GitHub Actions and moved workflow ownership closer to product teams.",
+                        "Supported reliability and release operations for distributed booking systems used by Saudia, Southwest, and NEOM.",
+                        "Maintained CI/CD paths across environments and worked across teams to reduce blocked or failed deployments.",
+                        "Improved monitoring and alert coverage so delivery issues were detected earlier.",
+                        "Participated in incident response and post-incident reviews, with follow-up actions to prevent repeats."
                     ]
                 },
                 {
                     title: "Infrastructure Engineer — Jumio",
+                    company: "Digital identity verification and KYC platform.",
                     dates: "Jul 2022 - Feb 2024",
                     setup: "Remote",
                     highlights: [
-                        "Consolidated fragmented Azure subscriptions and cleaned up unused resources, saving about $60k per year.",
-                        "Set up Azure AD Connect Sync to keep identity consistent across on-prem AD and Azure AD.",
-                        "Rolled out LogicMonitor so on-prem and Azure systems could be observed from one place.",
-                        "Led Cloudflare DNS migration and adopted tunnels to remove direct public IP exposure.",
-                        "Built and maintained infrastructure for a SUSE Rancher Kubernetes platform, including Harbor.",
-                        "Improved certificate handling and service connectivity across environments to reduce day-2 operational noise."
+                        "Consolidated fragmented Azure subscriptions and removed orphaned resources, saving about $60k per year.",
+                        "Implemented Azure AD Connect Sync to keep identity consistent across on-prem AD and Azure AD.",
+                        "Rolled out LogicMonitor so on-prem and Azure systems could be observed through one monitoring path.",
+                        "Led Cloudflare DNS migration and adopted Cloudflare Tunnels to remove direct public IP exposure.",
+                        "Provisioned and maintained infrastructure for a SUSE Rancher Kubernetes platform, including Harbor.",
+                        "Improved certificate handling and service connectivity across environments to reduce day-2 operational issues."
                     ]
                 },
                 {
                     title: "System Administrator -> Senior System Administrator — Optym",
+                    company: "Optimization software for transportation and logistics.",
                     dates: "Aug 2017 - Jul 2022",
                     setup: "Remote",
                     highlights: [
-                        "Built Terraform and Ansible automation for VM provisioning on VMware vSphere, cutting setup time and reducing drift.",
+                        "Built Terraform and Ansible automation for VM provisioning and baseline configuration on VMware vSphere.",
                         "Managed production, UAT, and dev infrastructure across Azure and on-prem VMware.",
-                        "Helped migrate datacenter workloads as teams moved away from legacy hardware.",
-                        "Ran Octopus Deploy and TeamCity pipelines to make releases more repeatable and less hand-held.",
+                        "Supported datacenter workload migration as teams moved away from legacy hardware.",
+                        "Ran Octopus Deploy and TeamCity pipelines to make releases repeatable across environments.",
                         "Maintained HAProxy, NGINX, and IIS layers, including SSL certificate and DNS operations.",
                         "Worked closely with engineering teams to align platform standards with how products were actually delivered."
                     ]
                 },
                 {
                     title: "IT Support Engineer — Tech Mahindra",
+                    company: "Global IT services and enterprise technology support.",
                     dates: "Sep 2016 - Aug 2017",
                     setup: "On-site",
                     highlights: [
@@ -604,36 +627,57 @@
             ],
             projects: [
                 {
-                    title: "Enterprise infrastructure automation and datacenter migration",
-                    description: "Built VM provisioning and configuration automation with Terraform and Ansible on VMware vSphere. It reduced manual effort and made a datacenter migration much smoother.",
+                    title: "Control Tower: internal developer platform for VM, LB, Ansible, and shell operations",
+                    description: "Built a monorepo-based internal platform with a single HAProxy entry point, five apps, shared frontend components, and Express backends. The system uses path-based routing, a shared SQLite store, Azure discovery, and live execution streams so operators can manage VM, load balancer, Ansible, and shell workflows from one place.",
+                    value: "Solved the problem of scattered operator tools by putting common infrastructure workflows behind one platform with shared navigation, routing, and state.",
+                    stack: ["HAProxy", "React", "Express", "SQLite", "WebSocket", "Azure"],
+                    linkLabel: "Read architecture docs",
+                    linkHref: "https://docs.ns.rocks/"
+                },
+                {
+                    title: "Infrastructure automation for repeatable VM provisioning",
+                    description: "Designed a Terraform + Ansible flow to provision VMs on VMware vSphere from reusable templates, apply baseline hardening, and hand off ready instances to application teams. This reduced one-off manual setup and gave operations a consistent build pattern during datacenter migration.",
+                    value: "Solved the problem of slow, inconsistent VM build requests by making provisioning repeatable and easier to hand over to teams.",
                     stack: ["Terraform", "Ansible", "vSphere", "PowerShell"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
-                    title: "CD pipeline optimization and Jenkins to GitHub Actions migration",
-                    description: "Migrated QA pipelines from Jenkins to GitHub Actions and helped teams take clearer ownership of release flow.",
-                    stack: ["Octopus Deploy", "GitHub Actions", "CI/CD"],
-                    linkLabel: "View repository",
-                    linkHref: "https://github.com/hi-Das"
-                },
-                {
                     title: "Azure tenant consolidation saving ~$60k/year",
-                    description: "Audited fragmented Azure subscriptions, removed orphaned resources, and consolidated environments to cut spend and simplify day-to-day operations.",
+                    description: "Ran a subscription-level cleanup across fragmented Azure tenants and CSP accounts by tagging ownership gaps, removing unused resources, and consolidating duplicated services. The effort brought annual spend down by about $60k and made ongoing cost review and accountability much easier.",
+                    value: "Solved the problem of hidden and duplicated cloud spend by making ownership and cleanup visible again.",
                     stack: ["Azure", "CSP", "Tenant Management"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
-                    title: "Self-hosted Kubernetes platform with Rancher",
-                    description: "Provisioned and maintained a self-hosted Kubernetes platform with SUSE Rancher and Harbor for private, controlled image distribution across teams.",
+                    title: "Hybrid identity integration with Azure AD Connect",
+                    description: "Implemented Azure AD Connect Sync between on-prem Active Directory and Azure AD, including OU and attribute mapping choices aligned with existing access patterns. This gave teams a single, consistent identity path across legacy workloads and cloud-hosted services.",
+                    value: "Solved the problem of split identity systems so users and admins could rely on one consistent access path across hybrid environments.",
+                    stack: ["Azure AD", "Active Directory", "AD Connect", "Hybrid Identity"],
+                    linkLabel: "View repository",
+                    linkHref: "https://github.com/hi-Das"
+                },
+                {
+                    title: "Unified monitoring rollout across on-prem and Azure",
+                    description: "Rolled out LogicMonitor across on-prem and Azure infrastructure, onboarded core services, and tuned alert thresholds to reduce noisy pages. Built role-focused dashboards so infra and application teams could triage incidents from a shared operational view.",
+                    value: "Solved the problem of blind spots and noisy alerts by giving support teams one place to see what was failing and why.",
+                    stack: ["LogicMonitor", "Azure Monitor", "Alerting", "Observability"],
+                    linkLabel: "View repository",
+                    linkHref: "https://github.com/hi-Das"
+                },
+                {
+                    title: "Self-hosted Kubernetes platform operations",
+                    description: "Provisioned and operated a self-hosted Kubernetes platform using SUSE Rancher, including cluster lifecycle tasks, access control, and routine maintenance. Integrated Harbor as the internal registry so images could be managed and promoted through a private, controlled path.",
+                    value: "Solved the problem of ad hoc cluster and image handling by standardizing how workloads were deployed and stored.",
                     stack: ["SUSE Rancher", "Kubernetes", "Harbor"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
                 },
                 {
                     title: "DNS migration to Cloudflare with zero public IP exposure",
-                    description: "Migrated DNS to Cloudflare and used tunnels to handle inbound traffic without exposing public IPs or opening extra firewall rules.",
+                    description: "Planned and executed DNS migration to Cloudflare, then used Cloudflare Tunnels to publish services without exposing origin public IPs. Added WAF rules and routing validation checks to keep external access controlled during and after cutover.",
+                    value: "Solved the problem of exposed origins and brittle inbound routing by moving access behind tunnels and policy checks.",
                     stack: ["Cloudflare", "DNS", "WAF", "Tunnels"],
                     linkLabel: "View repository",
                     linkHref: "https://github.com/hi-Das"
@@ -796,7 +840,10 @@
                     return `
                         <article class="role">
                             <div class="role-head">
-                                <h3 class="role-title">${escapeHtml(role.title)}</h3>
+                                <div class="role-main">
+                                    <h3 class="role-title">${escapeHtml(role.title)}</h3>
+                                    ${role.company ? `<p class="role-company">${escapeHtml(role.company)}</p>` : ""}
+                                </div>
                                 <span class="role-dates">${escapeHtml(role.dates)}${role.setup ? ` · ${escapeHtml(role.setup)}` : ""}</span>
                             </div>
                             <ul class="role-bullets">${bullets}</ul>
@@ -824,6 +871,7 @@
                     <article class="project">
                         <h3 class="project-title">${escapeHtml(project.title)}</h3>
                         <p class="project-desc">${escapeHtml(project.description)}</p>
+                        ${project.value ? `<p class="project-value">${escapeHtml(project.value)}</p>` : ""}
                         <div class="project-stack">${stackBadges}</div>
                     </article>
                 `;

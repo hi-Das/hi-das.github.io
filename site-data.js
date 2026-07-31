@@ -1,9 +1,9 @@
 window.siteContent = {
     profile: {
         name: "Manyabar Das",
-        role: "Reliability / Infrastructure / DevOps",
-        headline: "I build delivery systems, hybrid infrastructure, and calmer operations.",
-        bio: "Reliability and infrastructure engineer with 10+ years across IT support, systems administration, cloud operations, and SRE. I build and stabilize the systems behind software delivery — CI/CD, Azure infrastructure, hybrid environments, identity, and the operational guardrails that keep teams moving reliably.",
+        role: "Platform Reliability / Infrastructure",
+        headline: "I build infrastructure and delivery systems that teams can operate under pressure.",
+        bio: "Reliability and infrastructure engineer with 10+ years across IT support, systems administration, cloud operations, and SRE. I work on the systems behind software delivery: CI/CD, Azure and hybrid infrastructure, identity, observability, and incident response practices that make production easier to run.",
         email: "hi-das@outlook.com",
         linkedin: "https://linkedin.com/in/manyabar",
         github: "https://github.com/hi-Das",
@@ -26,7 +26,8 @@ window.siteContent = {
     story: {
         intro: [
             "I did not enter tech through a clean platform-engineering path. I started in IT support, where the work is immediate, messy, and impossible to fake. That background still shapes how I think: systems are only good if people can actually operate them when something goes wrong.",
-            "Over time I moved from keeping endpoints and users functioning, to owning infrastructure, and then to reliability work closer to delivery pipelines, cloud platforms, and operational guardrails. The through-line has stayed the same: remove friction, reduce avoidable failure, and leave systems easier to understand than I found them."
+            "Over time I moved from keeping endpoints and users functioning, to owning infrastructure, and then to reliability work closer to delivery pipelines, cloud platforms, and operational guardrails. The through-line has stayed the same: remove friction, reduce avoidable failure, and leave systems easier to understand than I found them.",
+            "Most of my production work has been on Azure, but the fundamentals matter more to me than the brand of cloud. I understand compute, networking, and storage well enough to move across cloud environments and work from first principles."
         ],
         chapters: [
             {
@@ -67,11 +68,11 @@ window.siteContent = {
             title: "Reliability Engineer",
             company: "Amadeus Labs — travel tech powering airline booking worldwide",
             bullets: [
-                "Migrated QA pipelines from Jenkins to GitHub Actions, reducing pipeline maintenance overhead and aligning with team-owned workflows already in GitHub.",
-                "Supported reliability and delivery operations for distributed systems serving Saudia, Southwest, and NEOM — environments where safe change and operational discipline are non-negotiable.",
-                "Maintained and improved CI/CD processes for large-scale travel infrastructure, coordinating across teams to reduce deployment friction.",
-                "Worked on monitoring, alerting, and observability improvements to catch issues earlier in the delivery cycle.",
-                "Handled incident response and post-incident reviews with a focus on systemic fixes over repeated workarounds."
+                "Migrated QA pipelines from Jenkins to GitHub Actions and moved pipeline ownership closer to product teams already working in GitHub.",
+                "Supported reliability and release operations for distributed booking systems used by Saudia, Southwest, and NEOM.",
+                "Maintained CI/CD paths across environments and worked with multiple teams to reduce failed or blocked deployments.",
+                "Improved monitoring and alert coverage so failures were detected earlier in the delivery cycle.",
+                "Participated in incident response and post-incident reviews, documenting follow-up actions to avoid repeat failures."
             ],
             stack: ["GitHub Actions", "Jenkins", "Azure", "CI/CD", "Distributed systems", "Incident response"]
         },
@@ -81,11 +82,11 @@ window.siteContent = {
             title: "Infrastructure Engineer",
             company: "Jumio Corp — identity verification for KYC and compliance",
             bullets: [
-                "Consolidated fragmented Azure subscriptions and cleaned up orphaned resources, reducing cloud spend by approximately $60k per year.",
-                "Deployed Azure AD Connect Sync to bridge on-prem Active Directory with Azure AD, enabling consistent identity across hybrid environments.",
-                "Rolled out LogicMonitor for unified observability across on-prem and Azure infrastructure, replacing blind spots with structured alerting.",
-                "Managed Cloudflare DNS migration with zero public IP exposure, using Cloudflare tunnels to eliminate inbound firewall rules.",
-                "Provisioned and maintained infrastructure for SUSE Rancher-based Kubernetes platform, including Harbor container registry."
+                "Consolidated fragmented Azure subscriptions and removed orphaned resources, reducing cloud spend by about $60k per year.",
+                "Implemented Azure AD Connect Sync to bridge on-prem Active Directory with Azure AD for consistent hybrid identity.",
+                "Rolled out LogicMonitor across on-prem and Azure systems to centralize metrics and alerting.",
+                "Migrated DNS to Cloudflare and used Cloudflare Tunnels so services stayed reachable without exposing public IPs.",
+                "Provisioned and maintained a SUSE Rancher-based Kubernetes platform, including Harbor as the internal image registry."
             ],
             stack: ["Azure", "Azure AD", "AD Connect", "LogicMonitor", "Cloudflare", "Rancher", "Kubernetes", "Harbor"]
         },
@@ -95,11 +96,11 @@ window.siteContent = {
             title: "System Administrator → Senior System Administrator",
             company: "Optym — supply-chain optimization for transportation and logistics",
             bullets: [
-                "Built Terraform and Ansible automation for VM provisioning and configuration management across VMware vSphere, reducing setup time and manual drift.",
-                "Managed production, UAT, and development infrastructure across Azure and on-prem VMware environments.",
-                "Migrated datacenter workloads and expanded IaaS footprint as the organization moved workloads off legacy hardware.",
-                "Administered Octopus Deploy and TeamCity for application delivery, managing deployment pipelines for internal products.",
-                "Maintained HAProxy, NGINX, and IIS load balancing and web serving across environments; managed SSL certificates and DNS."
+                "Built Terraform and Ansible automation for VM provisioning and configuration management on VMware vSphere.",
+                "Managed production, UAT, and development infrastructure across Azure and on-prem VMware.",
+                "Supported datacenter workload migration and expansion of the Azure IaaS footprint.",
+                "Administered Octopus Deploy and TeamCity pipelines used for internal product releases.",
+                "Maintained HAProxy, NGINX, and IIS load balancing and web serving; managed SSL certificates and DNS."
             ],
             stack: ["Terraform", "Ansible", "VMware vSphere", "Azure", "PowerShell", "Octopus Deploy", "TeamCity", "HAProxy", "NGINX"]
         },
@@ -119,28 +120,28 @@ window.siteContent = {
     impact: [
         {
             context: "Terraform · Ansible · vSphere · PowerShell",
-            title: "Enterprise infrastructure automation and datacenter migration",
-            body: "At Optym, built VM provisioning and configuration automation from scratch using Terraform and Ansible across VMware vSphere. Reduced manual provisioning effort significantly, eliminated environment drift, and supported a datacenter migration that moved workloads to a modern IaaS footing."
+            title: "Infrastructure automation for repeatable VM provisioning",
+            body: "At Optym, built Terraform and Ansible workflows for VM provisioning and baseline configuration on VMware vSphere. This replaced ticket-driven manual setup with a repeatable process and supported datacenter migration work."
         },
         {
             context: "Octopus Deploy · GitHub Actions · CI/CD",
-            title: "CD pipeline optimization and Jenkins to GitHub Actions migration",
-            body: "At Amadeus, migrated QA pipelines from Jenkins to GitHub Actions, consolidating pipeline ownership inside teams already using GitHub. At Optym, optimized Octopus Deploy release pipelines to reduce deployment friction across multiple environments."
+            title: "Delivery pipeline modernization and simplification",
+            body: "At Amadeus, migrated QA pipelines from Jenkins to GitHub Actions so delivery workflows lived where teams already worked. At Optym, maintained and tuned Octopus Deploy release pipelines across environments."
         },
         {
             context: "Azure · CSP · tenant management",
             title: "Azure tenant consolidation saving ~$60k/year",
-            body: "At Jumio, audited fragmented Azure subscriptions across CSP accounts, identified orphaned resources and redundant spend, and consolidated environments. The cleanup reduced annual Azure cost by approximately $60k and made the infrastructure state legible enough to manage."
+            body: "At Jumio, audited fragmented Azure subscriptions across CSP accounts, removed orphaned resources, and consolidated environments. The cleanup reduced annual Azure spend by about $60k and made ownership boundaries clearer."
         },
         {
             context: "SUSE Rancher · Kubernetes · Harbor",
-            title: "Self-hosted Kubernetes platform with Rancher",
-            body: "At Jumio, provisioned and maintained a self-hosted Kubernetes platform using SUSE Rancher, including cluster management, workload scheduling, and Harbor as an internal container registry — giving the engineering team a private, controlled image distribution layer."
+            title: "Self-hosted Kubernetes platform operations",
+            body: "At Jumio, provisioned and maintained a self-hosted Kubernetes platform using SUSE Rancher, with Harbor as the internal container registry for controlled image distribution."
         },
         {
             context: "Cloudflare · DNS · WAF · tunnels",
             title: "DNS migration to Cloudflare with zero public IP exposure",
-            body: "At Jumio, migrated DNS to Cloudflare and adopted Cloudflare tunnels to terminate inbound connectivity without exposing public IPs or opening inbound firewall rules. Added WAF rules as a protective layer in front of public-facing services."
+            body: "At Jumio, migrated DNS to Cloudflare and adopted Cloudflare Tunnels so inbound access did not require exposing public IPs or opening inbound firewall rules. Added WAF rules in front of public-facing services."
         }
     ],
     toolbox: [
